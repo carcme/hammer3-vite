@@ -3,25 +3,26 @@ import React from "react";
 const Subscribe = () => {
   return (
     <section className="bg-[#1b1b1b]">
-      <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 font-Montserrat">
-        <div className="mx-auto max-w-screen-md text-center px-4">
-          <h2 className="mb-4 text-3xl tracking-tight font-extrabold sm:text-4xl text-white">
+      <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6 font-Montserrat">
+        <div className="max-w-screen-md px-4 mx-auto text-center">
+          <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             Sign up for our newsletter
           </h2>
-          <p className="mx-auto mb-8 max-w-2xl font-light font-Montserrat md:mb-12 sm:text-xl text-gray-400">
+          <p className="max-w-2xl mx-auto mb-8 font-light text-gray-400 font-Montserrat md:mb-12 sm:text-xl">
             Stay up to date with the roadmap progress, announcements and
             exclusive discounts feel free to sign up with your email.
           </p>
           <form action="#">
-            <div className="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
+            <div className="items-center max-w-screen-sm mx-auto mb-3 space-y-4 sm:flex sm:space-y-0">
               <div className="relative w-full">
                 <label
-                  for="email"
+                  htmlFor="email"
+                  placeholder="for email"
                   className="hidden mb-2 text-sm font-medium text-gray-300"
                 >
                   Email address
                 </label>
-                <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                   <svg
                     className="w-5 h-5 text-gray-400"
                     fill="currentColor"
@@ -33,8 +34,9 @@ const Subscribe = () => {
                   </svg>
                 </div>
                 <input
-                  className="block p-3 pl-10 w-full text-sm  rounded-lg border sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500"
+                  className="block w-full p-3 pl-10 text-sm text-white placeholder-gray-400 bg-gray-700 border border-gray-600 rounded-lg sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500"
                   placeholder="Enter your email"
+                  autoComplete="email"
                   type="email"
                   id="email"
                   required=""
@@ -44,9 +46,9 @@ const Subscribe = () => {
                 <button
                   type="submit"
                   className="py-3 px-5 w-full text-sm font-medium text-center text-white 
-                   border cursor-pointer bg-red-700 sm:rounded-r-xl sm:rounded-none rounded-lg
-                   hover:text-red-700 hover:border-red-700 hover:shadow-[inset_14rem_0_0_0] hover:shadow-neutral-200 
-            duration-300 transition-[color,box-shadow] md:text-[16px] text-[14px]
+                   border border-gray-500 cursor-pointer bg-red-700 sm:rounded-r-xl sm:rounded-none rounded-lg
+                   hover:text-red-700 hover:border-red-700 hover:shadow-[inset_7rem_0_0_0] hover:shadow-neutral-200 
+            duration-1000 transition-[color,box-shadow] md:text-[16px] text-[14px]
                     focus:ring-4 focus:ring-red-900"
                 >
                   Subscribe

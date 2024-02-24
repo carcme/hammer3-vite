@@ -12,7 +12,6 @@ import {
 import data from "../data/TestimonialData";
 import TestimonialItem from "./TestimonialItem";
 import { getAssetURL } from "../lib/image-util";
-const imageFile = getAssetURL("bg_forest_walk.webp");
 
 const Testimonial = () => {
   const [animate, setAnimate] = useState(true);
@@ -29,6 +28,8 @@ const Testimonial = () => {
 
     return () => clearTimeout(timeoutId);
   }, [isVisible1]);
+
+  const imageFile = getAssetURL("bg_forest_walk.webp");
 
   return (
     <div>
@@ -55,7 +56,7 @@ const Testimonial = () => {
                 ]}
                 className="w-full max-w-5xl"
               >
-                <CarouselContent className="-ml-1 w-full">
+                <CarouselContent className="w-full -ml-1">
                   {data.map((item, index) => (
                     <CarouselItem
                       key={index}

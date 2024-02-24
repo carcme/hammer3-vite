@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Concept from "@/components/Concept";
+import MysteryItem from "@/components/MysteryItem";
+import data from "../data/MysteryListData";
 
 const Mystery = () => {
   useEffect(() => {
@@ -11,22 +12,42 @@ const Mystery = () => {
     <>
       <Navbar />
 
-      <div>
-        <section
-          id="mystery"
-          className="section-divider py-40 bg-[#222222] flex flex-col text-white"
+      <div id="mysteryPage" className="relative">
+        <div
+          className="w-full sm:p-20 bg-cover object-cover animate-bgBlur mix-blend-overlay bg-[#1b1b1b]"
+          // linear-gradient(to_bottom,rgba(27,27,27,0.5),rgba(27,27,27,1)),url('assets/bg_forest_lodge.webp')
+          loading="eager"
         >
-          <h1 className="text-2xl text-center font-bold lg:text-4xl">
-            Mystery Page!
-          </h1>
-          <p className="text-center lg:text-2xl">
-            TODO: build the Mystery page{" "}
-          </p>
-          <button className="block bg-AlmostBlack text-AlmostWhite w-1/3 mx-auto p-2 my-4 rounded-lg font-bold hover:bg-AlmostWhite hover:text-AlmostBlack hover:border-2 hover:border-AlmostBlack ">
-            Something
-          </button>
-        </section>
+          <div className="container max-w-6xl px-5 pt-40">
+            <div className="section-divider-white -top-24"></div>
+            <div className="flex justify-center mb-10 text-center text-white md:mb-20">
+              <h1 className="text-2xl font-bold font-Montserrat sm:text-5xl ">
+                Mysteries for you, Detective!
+              </h1>
+            </div>
+            <div className="flex flex-col flex-wrap justify-center md:flex-row">
+              {data.map((item, index) => (
+                <MysteryItem
+                  key={index}
+                  id={Boolean(index % 2)}
+                  title={item.title}
+                  plot={item.plot}
+                  image={item.image}
+                  srcset={item.srcset}
+                  players={item.players}
+                  difficulty={item.difficulty}
+                  cost={item.cost}
+                  slug={item.slug}
+                />
+              ))}
+              {/* {Array.from({ length: 2 }).map((_, index) => (
+                <MysteryItem key={index} />
+              ))} */}
+            </div>
+          </div>
+        </div>
       </div>
+
       <Footer />
     </>
   );

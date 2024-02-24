@@ -10,14 +10,14 @@ const ExpectationItem = ({ Icon, title, text }) => {
           </div>
         </div>
       </div>
-      <h2 className="font-bold lg:text-2xl text-lg text-center pt-10 text-white mt-2">
+      <h2 className="pt-10 mt-2 text-lg font-bold text-center text-white lg:text-2xl">
         {title}
       </h2>
       <span className="p-4 ">
         {text.map((item, index) => (
           <p
             key={index}
-            className="mt-2 text-[#404040] text-center md:text-[16px] text-[14px] group-hover:text-neutral-400 "
+            className="mt-2 text-neutral-400 sm:text-[#404040] text-center md:text-[16px] text-[14px] group-hover:text-neutral-400  "
           >
             {item}
           </p>

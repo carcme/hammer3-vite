@@ -6,7 +6,7 @@ import { FaMoon } from "react-icons/fa6";
 const ExpectationData = [
   {
     icon: (
-      <IoHandLeft className="text-white/80 w-20 h-20 hover:scale-110 transition-all" />
+      <IoHandLeft className="transition-all w-14 h-14 text-white/80 group-hover:scale-125" />
     ),
     title: "Meet & Greet",
     text: [
@@ -15,7 +15,7 @@ const ExpectationData = [
   },
   {
     icon: (
-      <PiWineFill className="text-white/80 w-20 h-20  hover:scale-110 transition-all" />
+      <PiWineFill className="transition-all w-14 h-14 text-white/80 group-hover:scale-125" />
     ),
     title: "Food & Drink",
     text: [
@@ -25,7 +25,7 @@ const ExpectationData = [
   },
   {
     icon: (
-      <GiSherlockHolmes className="text-white/80 w-20 h-20  hover:scale-110 transition-all" />
+      <GiSherlockHolmes className="transition-all w-14 h-14 text-white/80 group-hover:scale-125" />
     ),
     title: "Uncover the Killer",
     text: [
@@ -34,7 +34,7 @@ const ExpectationData = [
   },
   {
     icon: (
-      <FaMoon className="text-white/80 w-20 h-20  hover:scale-110 transition-all" />
+      <FaMoon className="transition-all w-14 h-14 text-white/80 group-hover:scale-125" />
     ),
     title: "Stay the Night",
     text: [

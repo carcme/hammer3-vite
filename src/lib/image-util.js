@@ -1,5 +1,6 @@
-function getAssetURL(name) {
-  return new URL(`../assets/${name}`, import.meta.url).href;
-}
+// Get the image from the assets folder
 
+function getAssetURL(imageName) {
+  return new URL(`../assets/${imageName}`, import.meta.url).href;
+}
 export { getAssetURL };

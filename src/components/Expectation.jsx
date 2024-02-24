@@ -21,7 +21,7 @@ const Expectation = () => {
 
   return (
     <section className="section-divider py-40 bg-[#222222] ">
-      <div className="w-full lg:p-10 text-center">
+      <div className="w-full text-center lg:p-10">
         <h1
           ref={refExpect}
           className={`text-white lg:text-4xl text-2xl font-bold font-Montserrat leading-2 pb-10

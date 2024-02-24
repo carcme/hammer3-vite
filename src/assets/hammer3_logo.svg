@@ -6,8 +6,9 @@
 	<style type="text/css">
 	.st0{display:none;fill:#DFB678;}
 	.st1{display:none;fill:#FF6B00;}
-	.st2{fill:#404040;}
+	.st2{fill:#CCC;}
 	</style>
+	<!-- .st2{fill:#404040;} -->
 	<rect x="0" y="0" class="st0" width="2000" height="2000"/>
 	<g>
 		<path class="st2" d="M1486.37,1288.66c50.04-84.34,78.81-182.78,78.81-287.96c0-121.6-38.41-234.22-103.74-326.41

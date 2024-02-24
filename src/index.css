@@ -9,6 +9,40 @@
   scroll-behavior: smooth;
 }
 
+.webkitAutoFillOverride:-webkit-autofill,
+.webkitAutoFillOverride:-webkit-autofill:hover,
+.webkitAutoFillOverride:-webkit-autofill:focus,
+.webkitAutoFillOverride:-webkit-autofill:active {
+  transition: background-color 1000s ease-in-out 0s !important;
+  -webkit-text-fill-color: #fff;
+}
+
+.footer-widgets__row--is-numbered {
+  counter-reset: widget-number;
+}
+.footer-widgets__row--is-numbered [class*="col-"] {
+  counter-increment: widget-number;
+}
+.footer-widgets__row--is-numbered [class*="col-"] .widget__header::before {
+  content: "0" counter(widget-number);
+}
+
+.social li {
+  @apply relative float-left mr-4;
+}
+.social li a {
+  @apply bg-[#333] text-white h-10 relative w-10 hover:text-white hover:bg-white rounded-full transition-colors duration-300 items-center justify-center flex;
+}
+.social li a i {
+  @apply relative z-20;
+}
+.social li a .inner {
+  @apply absolute block w-0 h-0 m-0 transition-all duration-300 bg-red-700 rounded-full left-2/4 top-2/4;
+}
+.social li a:hover .inner {
+  @apply h-[40px] w-[40px] ml-[-20px] mt-[-20px];
+}
+
 /* TODO: Add decoration for Active state  */
 .active-diagonal-line > a,
 .active-diagonal-line {
@@ -35,12 +69,20 @@
   @apply content-[""] inline-block align-middle h-0.5 bg-white;
 }
 
+.section-divider-white {
+  @apply relative text-center;
+}
+.section-divider-white::before {
+  @apply content-[""] block absolute left-2/4 top-16 w-10 h-1 bg-white;
+  transform: translate(-50%);
+}
+
 .section-divider {
-  @apply text-center relative;
+  @apply relative text-center;
 }
 
 .section-divider::before {
-  @apply content-[""] block absolute left-2/4 top-16 w-[80px] h-1 bg-[#333];
+  @apply content-[""] block absolute left-2/4 top-16 w-20 h-1 bg-[#333];
   transform: translate(-50%);
 }
 

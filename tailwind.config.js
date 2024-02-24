@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
   content: [
     "./pages/**/*.{js,jsx}",
     "./components/**/*.{js,jsx}",
@@ -17,6 +16,10 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        gallows: 'url("assets/gallows.webp")',
+        headlights: 'url("assets/misty-car-headlights.webp")',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -78,9 +81,29 @@ module.exports = {
           from: { filter: "blur(50px)", transform: "scale(1.2)" },
           to: { filter: "blur(0px)", transform: "scale(1)" },
         },
+        shuffle: {
+          "0%, 100%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(2px)" },
+        },
+        wave: {
+          "0%, 100%": { transform: "rotate(-30deg)" },
+          "50%": { transform: "rotate(30deg)" },
+        },
         fadeIn: {
           from: { filter: "opacity(0)" },
           to: { filter: "opacity(1)" },
+        },
+        shimmer: {
+          "100%": { left: "125%" },
+        },
+
+        flash: {
+          from: {
+            transform: "before:scale(0)",
+          },
+          to: {
+            transform: "before:scale(1)",
+          },
         },
       },
       animation: {
@@ -89,6 +112,10 @@ module.exports = {
         txtBlur: "txtBlur 1s 0.5s backwards",
         bgBlur: "bgBlur 1s",
         fadeIn: "fadeIn 2s 0.5s backwards",
+        flash: "flash 0.5s ",
+        shuffle: "shuffle 0.5s infinite linear",
+        wave: "wave 1s ease-in-out infinite ",
+        shimmer: "shimmer, 1s infinite linear",
       },
     },
   },

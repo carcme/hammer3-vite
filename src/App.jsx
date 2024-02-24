@@ -7,6 +7,7 @@ import Errors from "./pages/Errors";
 import Mystery from "./pages/Mystery";
 import Contact from "./pages/Contact";
 import Faq from "./pages/Faq";
+import Booking from "./pages/Booking";
 
 // const About = React.lazy(() => import("./pages/About"));
 // const Gallery = React.lazy(() => import("./pages/Gallery"));
@@ -26,6 +27,7 @@ function App() {
         <Route path="gallery" element={<Gallery />} />
         <Route path="mystery" element={<Mystery />} />
         <Route path="faq" element={<Faq />} />
+        <Route path="booking" element={<Booking />} />
 
         {/* 
         <Route path="login" element={<Login setUser={setUser} />} />

@@ -20,7 +20,7 @@ const Featured = () => {
   }, [isVisible1]);
 
   return (
-    <div className="section-divider h-fit bg-[#1B1B1B] ">
+    <div className="section-divider bg-[#1B1B1B] ">
       <div className="w-full lg:p-10 bg-[#1B1B1B]">
         <div className="px-20 pt-32 pb-10 text-center">
           <h1
@@ -31,20 +31,22 @@ const Featured = () => {
             Featured Mysteries
           </h1>
         </div>
-      </div>
-      <div className="flex justify-center flex-col">
-        {data.map((item, index) => (
-          <FeatureItem
-            key={index}
-            title={item.title}
-            plot={item.plot}
-            image={item.image}
-            players={item.players}
-            difficulty={item.difficulty}
-            cost={item.cost}
-            slug={item.slug}
-          />
-        ))}
+        <div className="flex flex-col justify-center">
+          {data.map((item, index) => (
+            <FeatureItem
+              key={index}
+              id={Boolean(index % 2)}
+              title={item.title}
+              plot={item.plot}
+              image={item.image}
+              srcset={item.srcset}
+              players={item.players}
+              difficulty={item.difficulty}
+              cost={item.cost}
+              slug={item.slug}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

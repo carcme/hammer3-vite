@@ -10,14 +10,13 @@ const Errors = () => {
         id="error"
         className="relative h-screen min-h-screen bg-cover w-full bg-[black]/20"
       >
-        <div className="bg-[url('assets/clown-gun-zoom.webp')]  h-screen bg-cover w-full bg-right object-cover animate-bgBlur mix-blend-overlay z-10 ">
-          <h1 className="text-center text-red-900 text-5xl font-extrabold">
+        <div className="h-full bg-cover bg-right object-cover animate-bgBlur mix-blend-overlay bg-[linear-gradient(to_bottom,rgba(27,27,27,0.5),rgba(27,27,27,1)),url('assets/clown-gun-zoom.webp')]">
+          <h1 className="text-5xl font-extrabold text-center text-red-900 pt-52">
             Error: 404
           </h1>
-          <p className="text-center text-red-900 text-5xl font-extrabold">
+          <p className="m-8 text-5xl font-extrabold text-center text-red-900">
             Page Not Found!
           </p>
-
           <div
             id="lines"
             className="p-32 w-[100%] h-32 relative before:absolute before:content-[''] 
