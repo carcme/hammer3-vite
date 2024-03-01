@@ -53,7 +53,7 @@ const ProcessForm = ({ status, message, onValidated }) => {
               </svg>
             </div>
             <input
-              className="block w-full p-3 pl-10 text-sm text-white placeholder-[#717171] bg-transparent border border-gray-600 rounded-lg shadow-none sm:rounded-none sm:rounded-l-lg  focus:ring-0 focus:border-gray-400  focus:outline-none webkitAutoFillOverride focus:text-white active:text-white"
+              className="block w-full p-3 pl-10 text-sm text-white placeholder-[#717171] bg-transparent border border-gray-600 rounded-lg shadow-none sm:rounded-none sm:rounded-l-lg focus:ring-0 focus:border-gray-400 focus:outline-none webkitAutoFillOverride focus:text-white active:text-white"
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               autoComplete="email"
@@ -65,9 +65,9 @@ const ProcessForm = ({ status, message, onValidated }) => {
           <div>
             <button
               type="submit"
-              className="py-3 px-5 w-full text-sm font-medium text-center text-white border border-gray-500 cursor-pointer bg-red-700 sm:rounded-none sm:rounded-r-xl rounded-lg hover:text-red-700 hover:border-red-700 hover:shadow-[inset_7rem_0_0_0] hover:shadow-neutral-200 transition-[color,box-shadow] duration-300 md:text-[16px] text-[14px]"
+              className="relative w-full px-5 py-3 overflow-hidden text-sm font-medium text-center text-white transition-all bg-red-700 border border-gray-500 rounded-lg shadow-2xl cursor-pointer sm:rounded-none sm:rounded-r-xl hover:before:bg-white before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-white before:transition-all before:duration-300 hover:text-red-700 hover:before:left-0 hover:before:w-full"
             >
-              Subscribe
+              <span className="relative z-10">Subscribe</span>
             </button>
           </div>
         </div>

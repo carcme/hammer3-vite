@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Gallery from "./pages/Gallery";
@@ -17,17 +18,18 @@ import Booking from "./pages/Booking";
 
 function App() {
   const [user, setUser] = useState(null);
+  const clientID = import.meta.env.VITE_GOOGLE_AUTH_CLIENT_ID;
 
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="gallery" element={<Gallery />} />
-        <Route path="mystery" element={<Mystery />} />
-        <Route path="faq" element={<Faq />} />
-        <Route path="booking" element={<Booking />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/mystery" element={<Mystery />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/booking" element={<Booking />} />
 
         {/* 
         <Route path="login" element={<Login setUser={setUser} />} />

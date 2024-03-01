@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import MysteryItem from "@/components/MysteryItem";
-import data from "../data/MysteryListData";
+import { MysteryListData as data } from "../data/MysteryListData";
 
 const Mystery = () => {
   useEffect(() => {
@@ -14,8 +14,8 @@ const Mystery = () => {
 
       <div id="mysteryPage" className="relative">
         <div
-          className="w-full sm:p-20 bg-cover object-cover animate-bgBlur mix-blend-overlay bg-[#1b1b1b]"
-          // linear-gradient(to_bottom,rgba(27,27,27,0.5),rgba(27,27,27,1)),url('assets/bg_forest_lodge.webp')
+          className="w-full sm:p-20 bg-cover object-cover mix-blend-overlay bg-[#1b1b1b]"
+          // linear-gradient(to_bottom,rgba(27,27,27,0.5),rgba(27,27,27,1)),url('assets/bg_forest_lodge.webp')"
           loading="eager"
         >
           <div className="container max-w-6xl px-5 pt-40">
@@ -25,11 +25,11 @@ const Mystery = () => {
                 Mysteries for you, Detective!
               </h1>
             </div>
-            <div className="flex flex-col flex-wrap justify-center md:flex-row">
+            <div className="flex flex-col flex-wrap md:flex-row">
               {data.map((item, index) => (
                 <MysteryItem
                   key={index}
-                  id={Boolean(index % 2)}
+                  id={item.id}
                   title={item.title}
                   plot={item.plot}
                   image={item.image}
@@ -38,6 +38,7 @@ const Mystery = () => {
                   difficulty={item.difficulty}
                   cost={item.cost}
                   slug={item.slug}
+                  compact={false}
                 />
               ))}
               {/* {Array.from({ length: 2 }).map((_, index) => (

@@ -14,11 +14,16 @@ const MysteryItem = ({
   difficulty,
   cost,
   slug,
+  compact,
 }) => {
   const imageFile = getAssetURL(image);
 
   return (
-    <div className="p-4 overflow-hidden lg:w-1/2">
+    <div
+      className={`p-4 overflow-hidden w-full ${
+        compact ? "xl:w-1/3" : "lg:w-1/2"
+      }`}
+    >
       <div className="relative group">
         <Link
           to="/booking"
@@ -62,7 +67,7 @@ const MysteryItem = ({
             <span className="relative z-10">{difficulty}</span>
           </div>
           <div className="absolute z-10 w-full px-2 py-10 lg:px-8 -bottom-10 group-hover:bg-transparent">
-            <h2 className="mb-1 font-bold tracking-widest text-white xl:text-3xl lg:text-2xl sm:text-3xl font-Montserrat ">
+            <h2 className="mb-1 font-bold tracking-widest text-left text-white xl:text-3xl lg:text-2xl sm:text-3xl font-Montserrat ">
               {title}
             </h2>
             <ul className="flex flex-wrap py-4 mb-4 text-[#717171] font-Montserrat text-[13px]">

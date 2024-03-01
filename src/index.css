@@ -17,6 +17,26 @@
   -webkit-text-fill-color: #fff;
 }
 
+input:focus-within ~ label,
+input:not(:placeholder-shown) ~ label {
+  @apply transform scale-90 -translate-y-8;
+}
+
+select:focus-within ~ label,
+select:has(option[value=""]:not(:checked)) ~ label {
+  @apply transform scale-90 -translate-y-8;
+}
+
+textarea:focus-within ~ label,
+textarea:not(:placeholder-shown) ~ label {
+  @apply transform scale-90 -translate-y-8;
+}
+
+input:focus-within ~ label,
+textarea:focus-within ~ label {
+  @apply text-neutral-500;
+}
+
 .footer-widgets__row--is-numbered {
   counter-reset: widget-number;
 }

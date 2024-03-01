@@ -6,6 +6,7 @@ import { getAssetURL } from "../lib/image-util";
 
 const Featured = ({
   id,
+  order,
   title,
   plot,
   image,
@@ -23,7 +24,7 @@ const Featured = ({
       <div className="grid grid-cols-1 m-4 lg:grid-cols-12 max-w-[1080px]">
         <div
           className={`order-last lg:col-span-5 bg-[#242424] shadow-xl shadow-black flex flex-col justify-center ${
-            id ? " lg:order-first" : "lg:order-last"
+            order ? " lg:order-first" : "lg:order-last"
           }`}
         >
           <h2 className="px-6 mt-10 text-2xl font-bold text-left text-white font-Montserrat lg:text-3xl">
@@ -52,13 +53,29 @@ const Featured = ({
             </li>
           </ul>
           <div className="inline-flex flex-col text-[#717171] font-normal leading-6 md:text-[16px] text-[14px] font-Hind px-6 text-left">
-            {plot.map((paragraph, index) => (
-              <p key={index} className="py-2 text-left">
-                {paragraph}
-              </p>
-            ))}
+            {plot.map(
+              (paragraph, index) =>
+                index < 10 && (
+                  <p key={index} className="py-2 text-left">
+                    {paragraph}
+                  </p>
+                )
+            )}
           </div>
-          <Link to={slug}>
+          <Link
+            to="/booking"
+            state={{
+              id: id,
+              title: title,
+              plot: plot,
+              image: image,
+              srcset: srcset,
+              players: players,
+              difficulty: difficulty,
+              cost: cost,
+              slug: slug,
+            }}
+          >
             <button
               className="my-6 px-10 py-3 bg-red-700 rounded-3xl text-white 
             hover:text-red-700 hover:border-red-700 hover:shadow-[inset_14rem_0_0_0] hover:shadow-neutral-200 
@@ -73,7 +90,7 @@ const Featured = ({
             <div className="hidden row-span-2 bg-transparent lg:inline-block"></div>
             <img
               className={`lg:hover:scale-110 lg:hover:shadow-xl lg:shadow-md lg:shadow-black lg:hover:drop-shadow-[10px_15px_15px_rgba(0,0,0,0.5)] transition-all duration-300 row-span-12 lg:row-span-8
-            ${id ? "hover:translate-x-8" : "hover:-translate-x-8"} `}
+            ${order ? "hover:translate-x-8" : "hover:-translate-x-8"} `}
               decoding="async"
               src={imageFile}
               alt="Featured mystery"

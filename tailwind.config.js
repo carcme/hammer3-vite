@@ -16,6 +16,9 @@ module.exports = {
       },
     },
     extend: {
+      transformOrigin: {
+        0: "0%",
+      },
       backgroundImage: {
         gallows: 'url("assets/gallows.webp")',
         headlights: 'url("assets/misty-car-headlights.webp")',

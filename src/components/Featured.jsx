@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import useIsVisible from "../hooks/useIsVisible";
 import FeatureItem from "./FeaturedItem";
-import data from "../data/MysteryListData";
+import { MysteryListData as data } from "../data/MysteryListData";
 
 const Featured = () => {
   const [animate, setAnimate] = useState(true);
@@ -32,20 +32,24 @@ const Featured = () => {
           </h1>
         </div>
         <div className="flex flex-col justify-center">
-          {data.map((item, index) => (
-            <FeatureItem
-              key={index}
-              id={Boolean(index % 2)}
-              title={item.title}
-              plot={item.plot}
-              image={item.image}
-              srcset={item.srcset}
-              players={item.players}
-              difficulty={item.difficulty}
-              cost={item.cost}
-              slug={item.slug}
-            />
-          ))}
+          {data.map(
+            (item, index) =>
+              item.feature && (
+                <FeatureItem
+                  key={index}
+                  order={Boolean(index % 2)}
+                  id={item.id}
+                  title={item.title}
+                  plot={item.plot}
+                  image={item.image}
+                  srcset={item.srcset}
+                  players={item.players}
+                  difficulty={item.difficulty}
+                  cost={item.cost}
+                  slug={item.slug}
+                />
+              )
+          )}
         </div>
       </div>
     </div>

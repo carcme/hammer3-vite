@@ -7,12 +7,11 @@ const HeroContent = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    console.log("LOADED");
     setLoaded(true);
   }, []);
 
   return (
-    <div id="home" className="relative xl:h-[1080px] bg-cover w-full">
+    <div id="home" className="xl:h-[1080px] w-full">
       {/* 
         bg-[url('assets/bg2.webp')] 
         url('https://hammer3.com/wp-content/uploads/2022/11/bg2.jpg')
