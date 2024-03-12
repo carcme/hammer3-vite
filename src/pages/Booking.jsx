@@ -1,19 +1,24 @@
 import React, { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { getAssetURL } from "../lib/image-util";
 import { Link } from "react-router-dom";
 import { FaGamepad, FaEuroSign } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
 import MysteryItem from "@/components/MysteryItem";
 import { MysteryListData as data } from "../data/MysteryListData";
-import BookingCalendar from "@/components/ui/Calendar/BookingCalendar";
-import TWCalendar from "@/components/ui/Calendar/TWCalendar";
-import BookingForm from "@/components/ui/BookingForm";
+import BookingForm from "@/components/Forms/BookingForm";
 
 const Booking = ({}) => {
+  const navigate = useNavigate();
   const location = useLocation();
+
+  if (location.state === null) {
+    // window.location.replace("https://hammer3.com/mystery");
+    navigate("/mystery");
+    return;
+  }
   const { id, title, plot, image, srcset, players, difficulty, cost, slug } =
     location.state;
   const heroImage = getAssetURL(image);

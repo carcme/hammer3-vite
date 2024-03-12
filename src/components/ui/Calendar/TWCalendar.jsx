@@ -90,13 +90,23 @@ const TWCalendar = ({ gcEvents, selectDate, setSelectDate }) => {
       <div className="flex flex-col justify-between h-28 md:w-1/3 w-80 md:h-96 md:px-5 ">
         <div className="flex items-center justify-between w-full md:items-start md:flex-col">
           <h1 className="font-normal">Your selected date </h1>
-          <h1 className="p-3 my-4 text-white rounded-lg font-semi bold bg-[#252525] w-fit animate-txtBlur">
-            {selectDate.toDate().toDateString()}
+          <h1
+            className={`p-3 my-4 text-white rounded-lg font-semi bold w-fit animate-txtBlur ${
+              selectDate.toDate().toDateString() ===
+              currentDate.toDate().toDateString()
+                ? "text-red-600"
+                : ""
+            }`}
+          >
+            {selectDate.toDate().toDateString() ===
+            currentDate.toDate().toDateString()
+              ? "No Selection"
+              : selectDate.toDate().toDateString()}
           </h1>
         </div>
         <div>
           <p className="text-sm italic">
-            * the selected date will be confirmed via email
+            * this is an evening event and starts at 6pm{" "}
           </p>
         </div>
       </div>

@@ -34,11 +34,12 @@ export const MysteryListData = [
   {
     id: 2,
     feature: true,
-    title: "Death at Dunham Manor",
+    title: "Death in the Berlin Barn",
     plot: [
-      "'Death at Dunham Manor' immerses players in a world of intrigue and betrayal as they attend a lavish dinner party hosted by Lord Alexander Dunham. Amidst the aristocratic splendor, guests navigate tangled relationships and hidden agendas.",
-      "Lady Emily Dunham, torn between duty and desire, pursues a forbidden romance, while her troubled brother, Sir William Dunham, grapples with resentment and self-destructive tendencies. Among the attendees are Lady Elizabeth Montgomery, driven by ambition, and Sir Reginald Hastings, embroiled in a bitter feud. Miss Abigail Foster, the governess, harbors a scandalous secret, while Dr. Geoffrey Wright and Colonel Rupert Mallory hide their own mysteries.",
-      "When Lord Dunham is discovered murdered, suspicion falls on each guest, sparking a thrilling race to uncover the killer and unravel the secrets lurking within Dunham Manor's walls.",
+      "'Death in the Berlin Barn' transports players to a desolate, run-down barn on the outskirts of a forgotten village.",
+      "Lord Alexander Dunham, a once-wealthy landowner, hosts an unconventional dinner party within the decrepit confines of the barn. Amidst the dilapidated surroundings, guests navigate tangled relationships and hidden agendas.",
+      "Lady Emily Dunham, yearning for freedom, pursues a forbidden romance. Hertroubled brother, Sir William Dunham, grapples with resentment and self-destructive tendencies. Other attendees are the ambitious Lady Elizabeth Montgomery, Governess Miss Abigail Foster harboring a scandalous secret, while Dr. Geoffrey Wright and Colonel Rupert Mallory hide their own mysteries.",
+      "When Lord Dunham is discovered murdered in the derelict barn, suspicion falls on each guest, sparking a thrilling race to uncover the killer and unravel the secrets lurking within the shadows.",
     ],
     plotExtended: [
       "In the quaint English countryside lies Dunham Manor, an estate renowned for its elegance and charm. The owner, Lord Alexander Dunham, is a distinguished aristocrat known for his lavish parties and extravagant lifestyle. However, behind the facade of opulence, secrets lurk within the walls of Dunham Manor.",

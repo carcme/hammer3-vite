@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
+
 import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import Errors from "./pages/Errors";
@@ -15,6 +16,8 @@ import Booking from "./pages/Booking";
 // const Errors = React.lazy(() => import("./pages/Errors"));
 // const Mystery = React.lazy(() => import("./pages/Mystery"));
 // const Contact = React.lazy(() => import("./pages/Contact"));
+// const Faq = React.lazy(() => import("./pages/Faq"));
+// const Booking = React.lazy(() => import("./pages/Booking"));
 
 function App() {
   const [user, setUser] = useState(null);
@@ -23,26 +26,26 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/mystery" element={<Mystery />} />
-        <Route path="/faq" element={<Faq />} />
-        <Route path="/booking" element={<Booking />} />
-
-        {/* 
-        <Route path="login" element={<Login setUser={setUser} />} />
-        <Route
-          path="dashboard"
-          element={
-            <ProtectedRoute user={user}>
-              <Dashboard user={user} />
-            </ProtectedRoute>
-          }
-        /> */}
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/gallery" element={<Gallery />} />
+        <Route exact path="/mystery" element={<Mystery />} />
+        <Route exact path="/faq" element={<Faq />} />
+        <Route exact path="/booking" element={<Booking />} />
         <Route path="*" element={<Errors />} />
       </Routes>
+
+      {/* <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="gallery" element={<Gallery />} />
+        <Route path="mystery" element={<Mystery />} />
+        <Route path="faq" element={<Faq />} />
+        <Route path="booking" element={<Booking />} />
+        <Route path="*" element={<Errors />} />
+      </Routes> */}
     </>
   );
 }

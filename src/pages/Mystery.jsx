@@ -14,14 +14,13 @@ const Mystery = () => {
 
       <div id="mysteryPage" className="relative">
         <div
-          className="w-full sm:p-20 bg-cover object-cover mix-blend-overlay bg-[#1b1b1b]"
+          className="w-full bg-cover object-cover mix-blend-overlay bg-[#1b1b1b] section-divider"
           // linear-gradient(to_bottom,rgba(27,27,27,0.5),rgba(27,27,27,1)),url('assets/bg_forest_lodge.webp')"
           loading="eager"
         >
           <div className="container max-w-6xl px-5 pt-40">
-            <div className="section-divider-white -top-24"></div>
             <div className="flex justify-center mb-10 text-center text-white md:mb-20">
-              <h1 className="text-2xl font-bold font-Montserrat sm:text-5xl ">
+              <h1 className="text-2xl font-bold font-Montserrat sm:text-5xl animate-bgBlur ">
                 Mysteries for you, Detective!
               </h1>
             </div>

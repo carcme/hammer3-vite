@@ -1,16 +1,20 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Temp from "@/components/Temp";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { hostsData } from "@/data/hostsData";
+import HowToPlay from "@/components/IconPack";
+
+import HostsSimple from "@/components/Hosts/HostsSimple";
+import howToPlayData from "../data/howToPlayData";
+import Testimonial from "@/components/Testimonial/Testimonial";
 
 const About = () => {
   return (
     <>
       <Navbar />
-      {/* <div className="h-96 bg-[#222] flex  justify-center py-40 text-neutral-400 ">
-        <p>nothign here except the footer</p>
-      </div> */}
-      <Temp />
+      <HowToPlay json={howToPlayData} />
+      <HostsSimple json={hostsData} />
+      <Testimonial />
       <Footer />
     </>
   );

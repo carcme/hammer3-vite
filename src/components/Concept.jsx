@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import useIsVisible from "../hooks/useIsVisible";
 import { Link } from "react-router-dom";
-import { Button } from "./ui/button";
 
 const Concept = () => {
   const [animate, setAnimate] = useState(true);

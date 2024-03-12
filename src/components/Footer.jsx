@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import SubscribeForm from "./ui/SubscribeForm";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import SubscribeWidget from "./Forms/SubscribeWidget";
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 import navData from "../data/NavlinkData";
 
 export const Footer = () => {
+  const navigate = useNavigate();
   return (
     <div id="footer" className="relative w-full h-full bg-cover ">
       <div
@@ -38,12 +39,14 @@ export const Footer = () => {
                     </Link>
                     <p>
                       Email:{" "}
-                      <a
+                      <Link to="/contact" className="hover:text-white">
+                        {/* <a
                         href="mailto:hammer@hammer3.com"
                         className="text-white"
-                      >
-                        hammer@hammer3.com
-                      </a>
+                        > */}
+                        Use Contact Form
+                        {/* </a> */}
+                      </Link>
                       <br />
                       <Link to={"tel:+4917634398803"}>
                         Tel:{" "}
@@ -113,7 +116,7 @@ export const Footer = () => {
                     </span>
                   </div>
 
-                  <SubscribeForm />
+                  <SubscribeWidget />
                 </div>
               </div>
             </div>

@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import SubscribeNewsletter from "@/components/SubscribeNewsletter";
-import MailchimpForm from "@/components/MailchimpForm";
+import ContactUs from "@/components/Contact/ContactUs";
+import SubscribeComponent from "@/components/Forms/SubscribeComponent";
+
 const Contact = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -11,25 +12,20 @@ const Contact = () => {
   return (
     <>
       <Navbar />
-
-      <div>
-        <section
-          id="contact"
-          className="section-divider py-40 bg-[#222222] flex flex-col text-white"
-        >
-          <h1 className="text-2xl font-bold text-center lg:text-4xl">
-            Contact Page!
+      <div className="section-divider bg-[#1b1b1b]">
+        <div className="flex flex-col w-full px-4 pt-40 text-center text-white lg:px-40">
+          <h1 className="mb-4 text-2xl font-bold sm:text-5xl animate-bgBlur">
+            Contact Us
           </h1>
-          <p className="px-3 text-center lg:text-2xl">
-            TODO: build the Contact page{" "}
+          <p className="pb-10 mx-auto text-base leading-relaxed lg:w-2/3 animate-bgBlur">
+            We'll try to answer any questions or just call us on the number at
+            the bottom of each page.
           </p>
-          <button className="block w-1/3 p-2 mx-auto my-4 font-bold rounded-lg bg-AlmostBlack text-AlmostWhite hover:bg-AlmostWhite hover:text-AlmostBlack hover:border-2 hover:border-AlmostBlack ">
-            Something
-          </button>
-        </section>
+        </div>
       </div>
-      <MailchimpForm />
-      <SubscribeNewsletter />
+      <ContactUs />
+      <div className="section-divider py-10 bg-[#1b1b1b]" />
+      <SubscribeComponent />
       <Footer />
     </>
   );

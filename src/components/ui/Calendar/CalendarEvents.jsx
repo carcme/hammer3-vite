@@ -51,7 +51,7 @@ const CalendarEvents = () => {
   //       setIsLoading(true);
   //       try {
   //         const response = await fetch(
-  //           "https://www.googleapis.com/calendar/v3/calendars/f9d8bcfa33aaa53f0e981422870dcff9688220eda266a8208eb8144ea442fdb2@group.calendar.google.com/events?maxResults=2500&key=AIzaSyBBZI2d2fdKECj6c4v-ZjY6DeuIWYL7KP8"
+  //           "https://www.googleapis.com/calendar/v3/calendars/f9d8bcfa33aaa53f0e981422870dcff9688220eda266a8208eb8144ea442fdb2@group.calendar.google.com/events?maxResults=2500&"
   //         );
   //         if (!response.ok) {
   //           throw new Error("Failed to fetch data");

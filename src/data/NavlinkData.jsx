@@ -4,16 +4,16 @@ const NavlinkData = [
     text: "home",
   },
   {
+    path: "/about",
+    text: "about",
+  },
+  {
     path: "/mystery",
     text: "mystery",
   },
   {
     path: "/gallery",
     text: "gallery",
-  },
-  {
-    path: "/about",
-    text: "about",
   },
   {
     path: "/faq",

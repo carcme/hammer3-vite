@@ -38,10 +38,6 @@ const MysteryItem = ({
             cost: cost,
             slug: slug,
           }}
-          // params={{ title: "somehtinghere" }}
-
-          // state={{
-          // }}
         >
           <img
             alt="mystery adventure"
