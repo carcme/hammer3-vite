@@ -10,6 +10,7 @@ import Mystery from "./pages/Mystery";
 import Contact from "./pages/Contact";
 import Faq from "./pages/Faq";
 import Booking from "./pages/Booking";
+import PrivatePolicy from "./pages/PrivatePolicy";
 
 // const About = React.lazy(() => import("./pages/About"));
 // const Gallery = React.lazy(() => import("./pages/Gallery"));
@@ -33,6 +34,7 @@ function App() {
         <Route exact path="/mystery" element={<Mystery />} />
         <Route exact path="/faq" element={<Faq />} />
         <Route exact path="/booking" element={<Booking />} />
+        <Route exact path="/private-policy" element={<PrivatePolicy />} />
         <Route path="*" element={<Errors />} />
       </Routes>
 

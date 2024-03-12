@@ -9,8 +9,8 @@ const Subscribe = () => {
             Sign up for our newsletter
           </h2>
           <p className="max-w-2xl mx-auto mb-8 font-light text-gray-400 font-Montserrat md:mb-12 sm:text-xl">
-            Stay up to date with the roadmap progress, announcements and
-            exclusive discounts feel free to sign up with your email.
+            To get notified of new mysteries, announcements and exclusive
+            discounts feel free to sign up with your email.
           </p>
           <form action="#">
             <div className="items-center max-w-screen-sm mx-auto mb-3 space-y-4 sm:flex sm:space-y-0">
@@ -54,7 +54,7 @@ const Subscribe = () => {
             <div className="mx-auto max-w-screen-sm text-[12px] text-left newsletter-form-footer text-gray-300">
               We care about the protection of your data.{" "}
               <a
-                href="#"
+                href="/private-policy"
                 className="font-medium text-primary-600 dark:text-primary-500 hover:underline"
               >
                 Read our Privacy Policy

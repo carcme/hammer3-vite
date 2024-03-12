@@ -137,7 +137,7 @@ const SubscribeWidget = () => {
       <div className="mx-0 max-w-screen-sm text-[12px] text-left newsletter-form-footer text-[#717171]">
         <p>We care about the protection of your data. </p>
         <p className="group">
-          <Link to={"/#"} className="font-medium hover:underline">
+          <Link to={"/private-policy"} className="font-medium hover:underline">
             Read our{" "}
             <span className="group-hover:text-white">Privacy Policy</span>
           </Link>
