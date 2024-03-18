@@ -1,5 +1,6 @@
 {
   "name": "hammer3",
+  "homepage": "https://hammer3.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -21,7 +22,6 @@
     "embla-carousel-autoplay": "^8.0.0-rc22",
     "embla-carousel-react": "^8.0.0-rc22",
     "hamburger-react": "^2.5.0",
-    "lucide-react": "^0.321.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.50.1",

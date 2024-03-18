@@ -1,7 +1,6 @@
 import React from "react";
 
 const HostsSimpleFlip = ({ json }) => {
-  console.log("json.listing[0]: " + json.listing[0].name);
   return (
     <div
       class="flex min-h-screen justify-center sm:flex-row

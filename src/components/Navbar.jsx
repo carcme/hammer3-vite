@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <div
       className={`flex fixed justify-between items-center h-16 xl:px-40 mx-auto px-2 text-white 
-       top-0 z-10 w-full transition-colors ease-in-out duration-700
+       top-0 z-50 w-full transition-colors ease-in-out duration-700
       ${
         scrollPosition < 100 && !isOpen ? "bg-transparent" : "bg-[#151515]/95"
       } `}
@@ -72,7 +72,7 @@ const Navbar = () => {
       {/* Mobile Navigation Menu */}
       <ul
         className={`top-[64px] md:hidden left-0 w-[60%] p-10 bg-[#151515]/95 text-neutral-500 fixed
-           h-full z-40 ease-in-out duration-700 
+           h-full z-50 ease-in-out duration-700 
         ${
           isOpen
             ? "translate-x-0 bg-[#151515]/95"
@@ -86,7 +86,7 @@ const Navbar = () => {
             key={index}
             className={({ isActive }) => (isActive ? " text-white " : "")}
           >
-            <li className="z-10 p-4 duration-300 border-b cursor-pointer hover:border-red-700 hover:font-extrabold hover:text-white border-neutral-500">
+            <li className="z-50 p-4 duration-300 border-b cursor-pointer hover:border-red-700 hover:font-extrabold hover:text-white border-neutral-500">
               {item.text}
             </li>
           </NavLink>

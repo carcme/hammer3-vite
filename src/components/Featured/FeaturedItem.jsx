@@ -16,7 +16,6 @@ const Featured = ({
   cost,
   slug,
 }) => {
-  console.log(image);
   const imageFile = getAssetURL(image);
 
   return (

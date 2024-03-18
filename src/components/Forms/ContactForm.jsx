@@ -31,7 +31,6 @@ export default function ContactForm() {
   }, [userName, setValue]);
 
   const onSubmit = async (data, e) => {
-    console.log(data);
     await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
@@ -55,7 +54,6 @@ export default function ContactForm() {
       .catch((error) => {
         setIsSuccess(false);
         setMessage("Client Error. Please check the console.log for more info");
-        console.log(error);
       });
   };
 

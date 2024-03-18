@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import useIsVisible from "../../hooks/useIsVisible";
+import useIsVisible from "@/hooks/useIsVisible";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
@@ -11,7 +11,6 @@ import {
 
 import data from "../../data/TestimonialData";
 import TestimonialItem from "./TestimonialItem";
-import { getAssetURL } from "../../lib/image-util";
 
 const Testimonial = () => {
   const [animate, setAnimate] = useState(true);
@@ -29,8 +28,6 @@ const Testimonial = () => {
     return () => clearTimeout(timeoutId);
   }, [isVisible1]);
 
-  const imageFile = getAssetURL("bg_forest_walk.webp");
-
   return (
     <div>
       <section className="section-divider h-fit bg-[url('assets/clown-gun-zoom.webp')] bg-cover w-full py-32">
@@ -38,7 +35,7 @@ const Testimonial = () => {
           <div className="lg:p-10 ">
             <h1
               ref={refTestimonial}
-              className={`text-white lg:text-4xl text-2xl font-bold font-Montserrat leading-2 pb-10
+              className={`text-white lg:text-5xl text-2xl font-bold font-Montserrat leading-2 pb-10
             ${isVisible1 && animate ? "sm:animate-txtBlur" : {}}`}
             >
               What Others Have Said

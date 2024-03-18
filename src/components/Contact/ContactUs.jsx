@@ -15,7 +15,6 @@ const ContactUs = () => {
   } = useForm({ mode: "onChange" });
 
   const onSubmit = async (data, e) => {
-    console.log(data);
     await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
@@ -39,12 +38,10 @@ const ContactUs = () => {
       .catch((error) => {
         setIsSuccess(false);
         setMessage("Client Error. Please check the console.log for more info");
-        console.log(error);
       });
   };
 
   const onMapLoaded = () => {
-    console.log("map loaded");
     setMapLoaded(true);
   };
 

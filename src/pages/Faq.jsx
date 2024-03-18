@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import React, { useEffect, useState } from "react";
 import Accordion from "@/components/ui/Accordion";
 import data from "@/data/faqData";
 
@@ -10,7 +8,6 @@ import Testimonial from "@/components/Testimonial/Testimonial";
 
 const Faq = () => {
   const heroImage = getAssetURL("bg_forest_lodge.webp");
-
   const [accordions, setAccordion] = useState(data);
 
   const toggleAccordion = (accordionkey) => {
@@ -21,12 +18,15 @@ const Faq = () => {
         return { ...accord, isOpen: false };
       }
     });
-
     setAccordion(updatedAccordions);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <Navbar />
       <section
         id="faqs"
         className="relative w-full py-40 overflow-hidden bg-center bg-no-repeat bg-cover"
@@ -52,9 +52,9 @@ const Faq = () => {
 
       <section className="bg-[#171717] py-10">
         <div className="max-w-4xl mx-auto text-center ">
-          {/* <h2 className="mx-auto mb-2 text-3xl font-bold text-red-800 font-Montserrat">
+          <h2 className="mx-auto mb-10 text-2xl font-bold sm:text-4xl text-neutral-200 font-Montserrat">
             Common Questions Answered
-          </h2> */}
+          </h2>
           {accordions.map((accordion) => (
             <Accordion
               key={accordion.key}
@@ -66,9 +66,10 @@ const Faq = () => {
           ))}
         </div>
       </section>
+
       <ContactUs />
+
       <Testimonial />
-      <Footer />
     </>
   );
 };

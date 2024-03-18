@@ -2,19 +2,14 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const TestimonialItem = ({ image, name, title, comment }) => {
-  console.log(image);
   return (
     <div>
-      {/* <CarouselItem key={index} className="w-full pl-1 md:basis-1/2 grow"> */}
       <div className="p-1">
         <Card className="bg-transparent border-0">
-          <CardContent className="flex aspect-square items-center justify-center ">
+          <CardContent className="flex items-center justify-center aspect-square ">
             <div className="shadow-xl rounded-xl border-2 max-w-72 border-[rgb(64,64,64)]">
-              <blockquote
-                className="h-full min-h-96 lg:min-w-64 pt-4 text-neutral-300 
-              flex flex-col bg-neutral-900/40 backdrop-blur-md shadow rounded-xl  align-middle"
-              >
-                <header className="flex flex-col flex-1 justify-center">
+              <blockquote className="flex flex-col h-full pt-4 align-middle shadow min-h-96 lg:min-w-64 text-neutral-300 bg-neutral-900/40 backdrop-blur-md rounded-xl">
+                <header className="flex flex-col justify-center flex-1">
                   {comment.map((text, index) => (
                     <p
                       key={index}
@@ -47,7 +42,6 @@ const TestimonialItem = ({ image, name, title, comment }) => {
           </CardContent>
         </Card>
       </div>
-      {/* </CarouselItem> */}
     </div>
   );
 };

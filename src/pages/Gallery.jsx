@@ -1,8 +1,5 @@
-import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import React, { useEffect } from "react";
 import GridGallery from "@/components/gallery/GridGallery";
-
 import galleryVenueData from "@/data/galleryVenue";
 
 const Gallery = () => {
@@ -68,11 +65,12 @@ const Gallery = () => {
       text: "Lorem ipsum ",
     },
   ];
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
-      <Navbar />
-
       <div className="bg-[#171717]">
         <div className="flex flex-col w-full px-4 pt-40 text-center text-white section-divider lg:px-40">
           <h1 className="mb-4 text-2xl font-bold sm:text-5xl animate-bgBlur">
@@ -84,7 +82,6 @@ const Gallery = () => {
         </div>
       </div>
       <GridGallery galleryImages={galleryVenueData.listItems} />
-      <Footer />
     </>
   );
 };

@@ -29,8 +29,6 @@ export default function GridGallery({ galleryImages }) {
       : setSlideNumber(slideNumber + 1);
   };
 
-  console.log("galleryImages: ", galleryImages);
-
   return (
     <div>
       {openModal && (

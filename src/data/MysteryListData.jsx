@@ -47,7 +47,7 @@ export const MysteryListData = [
       "The evening begins with a lavish dinner party hosted by Lord Dunham, attended by a select group of esteemed guests including wealthy socialites, prominent politicians, and influential figures from various walks of life. However, tensions simmer beneath the surface as old rivalries resurface and hidden agendas come to light.",
       "As the night progresses, a shocking discovery is made – the lifeless body of Lord Dunham is found in the study, a dagger plunged into his chest. Panic ensues as accusations fly and suspicion falls on each guest, each with their own motives and alibis.",
     ],
-    image: "ai.jpg",
+    image: "ai.webp",
     srcset: "ai",
     players: "4-10",
     difficulty: "Taxing",

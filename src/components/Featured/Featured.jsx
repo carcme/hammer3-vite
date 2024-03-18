@@ -25,7 +25,7 @@ const Featured = () => {
         <div className="px-20 pt-32 pb-10 text-center">
           <h1
             ref={refFeature}
-            className={`text-white lg:text-4xl text-2xl font-bold font-Montserrat leading-2
+            className={`text-white lg:text-5xl text-2xl font-bold font-Montserrat leading-2
              ${isVisible1 && animate ? "sm:animate-txtBlur" : {}}`}
           >
             Featured Mysteries

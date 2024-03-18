@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getAssetURL } from "../lib/image-util";
 import { Link } from "react-router-dom";
@@ -15,7 +13,6 @@ const Booking = ({}) => {
   const location = useLocation();
 
   if (location.state === null) {
-    // window.location.replace("https://hammer3.com/mystery");
     navigate("/mystery");
     return;
   }
@@ -27,8 +24,7 @@ const Booking = ({}) => {
     window.scrollTo(0, 0);
   }, [id]);
   return (
-    <div>
-      <Navbar />
+    <>
       <div id="home" className="w-full bg-cover">
         <div className="relative">
           <div
@@ -159,8 +155,7 @@ const Booking = ({}) => {
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
+    </>
   );
 };
 

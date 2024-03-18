@@ -1,6 +1,4 @@
-import React from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import React, { useEffect } from "react";
 import { hostsData } from "@/data/hostsData";
 import HowToPlay from "@/components/IconPack";
 
@@ -9,13 +7,14 @@ import howToPlayData from "../data/howToPlayData";
 import Testimonial from "@/components/Testimonial/Testimonial";
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
-      <Navbar />
       <HowToPlay json={howToPlayData} />
       <HostsSimple json={hostsData} />
       <Testimonial />
-      <Footer />
     </>
   );
 };

@@ -24,7 +24,7 @@ const Concept = () => {
         <div className="px-20 py-40 text-center">
           <h1
             ref={refConcept}
-            className={`text-white lg:text-4xl text-xl font-bold font-Montserrat pb-10
+            className={`text-white lg:text-5xl text-2xl font-bold font-Montserrat pb-10
              ${isVisible1 && animate ? "sm:animate-txtBlur" : {}}`}
           >
             Concept

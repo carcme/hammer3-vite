@@ -1,12 +1,10 @@
-import React, { useState } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import React, { useEffect, useState } from "react";
 import Accordion from "@/components/ui/Accordion";
 
 import data from "@/data/PrivacyPolicyData";
 import { getAssetURL } from "../lib/image-util";
 
-const PrivatePolicy = () => {
+const PrivacyPolicy = () => {
   const heroImage = getAssetURL("clown-gun-zoom.webp");
   const [policies, setPolicies] = useState(data.policy);
 
@@ -21,10 +19,12 @@ const PrivatePolicy = () => {
 
     setPolicies(updatedPolicies);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    <div>
-      <Navbar />
+    <>
       <section
         id="faqs"
         className="relative w-full overflow-hidden bg-center bg-no-repeat bg-cover h-60 sm:py-40 sm:h-80"
@@ -63,10 +63,8 @@ const PrivatePolicy = () => {
           ))}
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </>
   );
 };
 
-export default PrivatePolicy;
+export default PrivacyPolicy;

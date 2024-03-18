@@ -22,7 +22,6 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date }) => {
   const dateIsSet = date !== today;
 
   const onSubmit = async (data, e) => {
-    console.log(data);
     await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
@@ -46,13 +45,11 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date }) => {
       .catch((error) => {
         setIsSuccess(false);
         setMessage("Client Error. Please check the console.log for more info");
-        console.log(error);
       });
   };
 
   useEffect(() => {
     if (isValid) {
-      console.log("ref: ", confirmRef);
       confirmRef.current.scrollIntoView({
         behavior: "smooth",
         block: "end",

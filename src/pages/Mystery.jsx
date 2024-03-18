@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import MysteryItem from "@/components/MysteryItem";
 import { MysteryListData as data } from "../data/MysteryListData";
 
@@ -10,8 +8,6 @@ const Mystery = () => {
   }, []);
   return (
     <>
-      <Navbar />
-
       <div id="mysteryPage" className="relative">
         <div
           className="w-full bg-cover object-cover mix-blend-overlay bg-[#1b1b1b] section-divider"
@@ -47,8 +43,6 @@ const Mystery = () => {
           </div>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 };

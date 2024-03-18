@@ -9,9 +9,8 @@ const HeroContent = ({ loaded, setLoaded }) => {
 
   useEffect(() => {
     //
-    console.log("----------------------------loaded: ", loaded);
     setLoaded(true);
-  }, [loaded]);
+  }, []);
 
   return (
     <div id="home" className="xl:h-[1080px] w-full">
