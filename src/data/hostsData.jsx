@@ -1,7 +1,7 @@
-import saImage1 from "/sa2.webp";
-import saImage2 from "/sa2.webp";
-import mbImage1 from "/mb3.webp";
-import mbImage2 from "/mb3.webp";
+import saImage1 from "@public/sa2.webp";
+import saImage2 from "@public/sa2.webp";
+import mbImage1 from "@public/mb3.webp";
+import mbImage2 from "@public/mb3.webp";
 
 export const hostsData = {
   section: "Your Hosts",

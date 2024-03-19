@@ -12,6 +12,13 @@ import {
 import data from "../../data/TestimonialData";
 import TestimonialItem from "./TestimonialItem";
 
+/**
+ * https://ui.shadcn.com/docs/components/carousel
+ *
+ * maybe find alternative - this aint great :/
+ *
+ * @returns
+ */
 const Testimonial = () => {
   const [animate, setAnimate] = useState(true);
   const refTestimonial = useRef();

@@ -1,14 +1,15 @@
 import React from "react";
-import barnFirepit from "/barn-firepit.webp";
-import firepitSunlight from "/firepit-sunlight.webp";
-import kitchen from "/kitchen.webp";
-import redDoor from "/red-door.webp";
-import barnDark from "/barn-dark.webp";
-import barnGarden from "/barn-garden.webp";
-import stage from "/stage.webp";
-import dorm from "/dorm.webp";
-import sheild from "/shield.webp";
-import elf from "/elf-house.webp";
+
+import barnFirepit from "@public/barn-firepit.webp";
+import firepitSunlight from "@public/firepit-sunlight.webp";
+import kitchen from "@public/kitchen.webp";
+import redDoor from "@public/red-door.webp";
+import barnDark from "@public/barn-dark.webp";
+import barnGarden from "@public/barn-garden.webp";
+import stage from "@public/stage.webp";
+import dorm from "@public/dorm.webp";
+import sheild from "@public/shield.webp";
+import elf from "@public/elf-house.webp";
 
 const galleryVenueData = {
   sectionHeading: "Crime Dinner Venue",

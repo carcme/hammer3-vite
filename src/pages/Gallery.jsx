@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import GridGallery from "@/components/gallery/GridGallery";
-import galleryVenueData from "@/data/galleryVenue";
+import galleryVenueData from "@/data/galleryVenueData";
 
 const Gallery = () => {
   const galleryImages = [

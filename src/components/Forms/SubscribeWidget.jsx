@@ -5,7 +5,7 @@ import { TiTick } from "react-icons/ti";
 import { BiMailSend } from "react-icons/bi";
 import { MdErrorOutline } from "react-icons/md";
 
-const ProcessForm = ({ status, message, onValidated }) => {
+const ProcessForm = ({ status, message, onValidated, source }) => {
   const [email, setEmail] = useState("");
   const [state, setState] = useState();
   // start, sending, success, error
@@ -76,7 +76,13 @@ const ProcessForm = ({ status, message, onValidated }) => {
         </div>
       )}
       {status == "success" && (
-        <div className="items-center max-w-screen-sm py-3 mx-0 mb-3 space-y-4 sm:flex sm:space-y-0 animate-txtBlur">
+        <div
+          className={`items-center py-3 mx-0 mb-3 space-y-4 sm:flex sm:space-y-0 animate-txtBlur ${
+            source === "component"
+              ? "justify-center max-w-full"
+              : "max-w-screen-sm "
+          }}`}
+        >
           <TiTick size={24} className="text-red-700 " />
           <p className="mr-2 italic text-neutral-200">
             Subscribed to the Newsletter{" "}
@@ -116,7 +122,7 @@ const ProcessForm = ({ status, message, onValidated }) => {
   );
 };
 
-const SubscribeWidget = () => {
+const SubscribeWidget = ({ source }) => {
   const url = `${import.meta.env.VITE_MC_SIGNUP_URL}?u=${
     import.meta.env.VITE_MC_U
   }&id=${import.meta.env.VITE_MC_ID}`;
@@ -130,6 +136,7 @@ const SubscribeWidget = () => {
             status={status}
             message={message}
             onValidated={(formData) => subscribe(formData)}
+            source={source}
           />
         )}
       />

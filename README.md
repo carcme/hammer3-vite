@@ -1,8 +1,7 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [Manage subscriber list](https://us18.admin.mailchimp.com/lists/members/#p:1-s:25-sa:last_update_time-so:false)
 
-Currently, two official plugins are available:
+- [Calendar integration](https://console.cloud.google.com/apis/credentials?project=hammer3-415513)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Web3Forms](https://web3forms.com/#start)

@@ -1,11 +1,10 @@
 // Get the events from the google calendar
 import { useState, useEffect } from "react";
-const CLIENT_ID = import.meta.env.VITE_CAL_CLIENT_ID;
-const API_KEY = import.meta.env.VITE_CAL_API_KEY;
-const CAL_ID = import.meta.env.VITE_CALENDAR_ID;
 
 function getGoogleCalendarEvents(updateEvents) {
-  //   const [events, setEvents] = useState([]);
+  const CLIENT_ID = import.meta.env.VITE_CAL_CLIENT_ID;
+  const API_KEY = import.meta.env.VITE_CAL_API_KEY;
+  const CAL_ID = import.meta.env.VITE_CALENDAR_ID;
 
   const undef = undefined;
 

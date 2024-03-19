@@ -38,7 +38,7 @@ export const MysteryListData = [
     plot: [
       "'Death in the Berlin Barn' transports players to a desolate, run-down barn on the outskirts of a forgotten village.",
       "Lord Alexander Dunham, a once-wealthy landowner, hosts an unconventional dinner party within the decrepit confines of the barn. Amidst the dilapidated surroundings, guests navigate tangled relationships and hidden agendas.",
-      "Lady Emily Dunham, yearning for freedom, pursues a forbidden romance. Hertroubled brother, Sir William Dunham, grapples with resentment and self-destructive tendencies. Other attendees are the ambitious Lady Elizabeth Montgomery, Governess Miss Abigail Foster harboring a scandalous secret, while Dr. Geoffrey Wright and Colonel Rupert Mallory hide their own mysteries.",
+      "Lady Emily Dunham, yearning for freedom, pursues a forbidden romance. Her troubled brother, Sir William Dunham, grapples with resentment and self-destructive tendencies. Other attendees are the ambitious Lady Elizabeth Montgomery, Governess Miss Abigail Foster harboring a scandalous secret, while Dr. Geoffrey Wright and Colonel Rupert Mallory hide their own mysteries.",
       "When Lord Dunham is discovered murdered in the derelict barn, suspicion falls on each guest, sparking a thrilling race to uncover the killer and unravel the secrets lurking within the shadows.",
     ],
     plotExtended: [

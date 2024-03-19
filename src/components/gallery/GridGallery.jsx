@@ -35,7 +35,7 @@ export default function GridGallery({ galleryImages }) {
         <div className="fixed inset-0 z-20 flex items-center justify-center w-full h-full bg-black/80">
           <div className="fixed z-20 -translate-y-1/2 rounded-full cursor-pointer bg-black/50 size-12 text-neutral-300 top-[60px] right-9"></div>
           <FaXmark
-            className="fixed z-20 cursor-pointer text-neutral-300 size-10 top-10 right-10 hover:fill-red-700"
+            className="fixed z-20 cursor-pointer text-neutral-300 size-10 top-20 right-10 hover:fill-red-700"
             onClick={handleCloseModal}
           />
           <div className="fixed z-20 -translate-y-1/2 rounded-full cursor-pointer bg-black/50 size-10 text-neutral-300 top-1/2 left-8"></div>
@@ -71,7 +71,7 @@ export default function GridGallery({ galleryImages }) {
         {galleryImages &&
           galleryImages.map((slide, index) => {
             return (
-              <div className="relative " key={index}>
+              <div className="relative" key={index}>
                 <div
                   className="h-full cursor-pointer hover:z-20"
                   key={index}
