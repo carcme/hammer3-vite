@@ -5,3 +5,7 @@
 - [Calendar integration](https://console.cloud.google.com/apis/credentials?project=hammer3-415513)
 
 - [Web3Forms](https://web3forms.com/#start)
+
+#Github demo site
+
+- [Hammer3](https://hammer3-vite.pages.dev/)

@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Navigate, useLocation } from "react-router-dom";
 import { getAssetURL } from "../lib/image-util";
-import { Link } from "react-router-dom";
 import { FaGamepad, FaEuroSign } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
 import MysteryItem from "@/components/MysteryItem";
@@ -9,12 +8,12 @@ import { MysteryListData as data } from "../data/MysteryListData";
 import BookingForm from "@/components/Forms/BookingForm";
 
 const Booking = ({}) => {
-  const navigate = useNavigate();
   const location = useLocation();
 
-  if (location.state === null) {
-    navigate("/mystery");
-    return;
+  console.log("location.state === " + location?.state);
+  if (location === null || location.state === null) {
+    console.log("Error - Navigate to /mystery ");
+    return <Navigate to={"/mystery"} />;
   }
   const { id, title, plot, image, srcset, players, difficulty, cost, slug } =
     location.state;
