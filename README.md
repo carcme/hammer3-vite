@@ -1,4 +1,4 @@
-# React + Vite
+# Integrations
 
 - [Manage subscriber list](https://us18.admin.mailchimp.com/lists/members/#p:1-s:25-sa:last_update_time-so:false)
 
@@ -6,6 +6,6 @@
 
 - [Web3Forms](https://web3forms.com/#start)
 
-#Github demo site
+# Demo
 
 - [Hammer3](https://hammer3-vite.pages.dev/)

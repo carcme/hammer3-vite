@@ -53,7 +53,7 @@ export default function GridGallery({ galleryImages }) {
             <img
               className="object-contain w-full h-full bg-contain cursor-pointer"
               src={galleryImages[slideNumber].img}
-              alt=""
+              alt={galleryImages[slideNumber].text}
               onClick={nextSlide}
             />
             {galleryImages[slideNumber].text !== "" && (
@@ -77,7 +77,11 @@ export default function GridGallery({ galleryImages }) {
                   key={index}
                   onClick={() => handleOpenModal(index)}
                 >
-                  <img src={slide.img} alt="" className="object-cover h-full" />
+                  <img
+                    src={slide.img}
+                    alt={slide.text}
+                    className="object-cover h-full"
+                  />
                 </div>
                 <div
                   className="absolute inset-0 z-10 flex transition duration-200 ease-in hover:opacity-0"

@@ -12,7 +12,7 @@ const Booking = ({}) => {
 
   console.log("location.state === " + location?.state);
   if (location === null || location.state === null) {
-    console.log("Error - Navigate to /mystery ");
+    console.log("Error - No mystery data, redirect to select page ");
     return <Navigate to={"/mystery"} />;
   }
   const { id, title, plot, image, srcset, players, difficulty, cost, slug } =

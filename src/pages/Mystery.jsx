@@ -29,6 +29,7 @@ const Mystery = () => {
                   plot={item.plot}
                   image={item.image}
                   srcset={item.srcset}
+                  imgAlt={item.imgAlt}
                   players={item.players}
                   difficulty={item.difficulty}
                   cost={item.cost}

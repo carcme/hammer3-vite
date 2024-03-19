@@ -12,7 +12,7 @@ const HostsSimple = ({ json }) => {
         </h1>
 
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 gap-16 md:grid-cols-2 ">
+          <div className="grid grid-cols-1 sm:gap-28 md:grid-cols-2 ">
             {json.listing.map((host, i) => (
               <div
                 key={i}
@@ -22,7 +22,7 @@ const HostsSimple = ({ json }) => {
                   <img
                     className="object-cover w-full h-full transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
                     src={host.frontImg}
-                    alt=""
+                    alt={host.name}
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/10 group-hover:via-black/60 group-hover:to-black/90"></div>

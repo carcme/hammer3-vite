@@ -11,6 +11,7 @@ const Featured = ({
   plot,
   image,
   srcset,
+  imgAlt,
   players,
   difficulty,
   cost,
@@ -92,7 +93,7 @@ const Featured = ({
             ${order ? "lg:hover:translate-x-8" : "lg:hover:-translate-x-8"} `}
               decoding="async"
               src={imageFile}
-              alt="Featured mystery"
+              alt={imgAlt}
               srcSet={`
                   ${getAssetURL(`${srcset}` + ".webp")} 900w,
                   ${getAssetURL(`${srcset}` + "-768x512.webp")} 768w,

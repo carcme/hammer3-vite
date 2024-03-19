@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import ContactUs from "@/components/Contact/ContactUs";
 import SubscribeComponent from "@/components/Forms/SubscribeComponent";
-import SubscribeWidget from "../components/Forms/SubscribeWidget";
 
 const Contact = () => {
   useEffect(() => {

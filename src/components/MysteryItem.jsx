@@ -10,6 +10,7 @@ const MysteryItem = ({
   plot,
   image,
   srcset,
+  imgAlt,
   players,
   difficulty,
   cost,
@@ -40,7 +41,7 @@ const MysteryItem = ({
           }}
         >
           <img
-            alt="mystery adventure"
+            alt={imgAlt}
             className="inset-0 sm:h-[400px] h-[300px] object-cover object-center w-full opacity-30 group-hover:opacity-100 group-hover:bg-[linear-gradient(to_bottom,rgba(27,27,27,0.5),rgba(27,27,27,1))] shadow-xl shadow-black group-hover:scale-105 transition ease-in-out duration-300"
             src={imageFile}
             srcSet={`

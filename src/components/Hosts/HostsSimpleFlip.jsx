@@ -15,6 +15,7 @@ const HostsSimpleFlip = ({ json }) => {
             <div class="absolute inset-0">
               <img
                 src={host.frontImg}
+                alt={host.name}
                 class="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40 "
               />
             </div>
