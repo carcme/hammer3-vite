@@ -1,11 +1,12 @@
 import React from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SubscribeWidget from "./Forms/SubscribeWidget";
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 import navData from "../data/NavlinkData";
+import { getLanguage } from "@/LanguageContext";
 
 export const Footer = () => {
-  const navigate = useNavigate();
+  const text = getLanguage(navData);
   return (
     <div id="footer" className="relative w-full h-full bg-cover ">
       <div
@@ -65,7 +66,7 @@ export const Footer = () => {
                     Useful Links
                   </h2>
                   <ul className="mb-10 list-none font-Hind text-[12px] tracking-[3px] leading-6 text-[#717171] ">
-                    {navData.map((item, index) => (
+                    {text.map((item, index) => (
                       <li
                         key={index}
                         className="py-1.5 ml-2 uppercase   duration-200  cursor-pointer hover:text-white relative

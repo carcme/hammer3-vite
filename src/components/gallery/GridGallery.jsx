@@ -57,8 +57,8 @@ export default function GridGallery({ galleryImages }) {
               onClick={nextSlide}
             />
             {galleryImages[slideNumber].text !== "" && (
-              <div class="absolute flex justify-center items-center left-0 bottom-0 w-full p-8 bg-black/60 ">
-                <h3 className="w-3/4 text-xl font-semibold text-center text-white font-Montserrat">
+              <div class="absolute flex justify-center items-center left-0 bottom-0 w-full p-4  bg-gradient-to-t from-black/60 to-black/10 backdrop-blur-sm ">
+                <h3 className="w-3/4 text-sm font-semibold text-center text-white md:text-lg font-Montserrat">
                   {galleryImages[slideNumber].text}
                 </h3>
               </div>

@@ -5,6 +5,7 @@ import Expectation from "../components/IconPack";
 import Featured from "@/components/Featured/Featured";
 import Testimonial from "@/components/Testimonial/Testimonial";
 import expectData from "../data/ExpectationData";
+import { getLanguage } from "@/LanguageContext";
 
 const Home = () => {
   const [loaded, setLoaded] = useState(false);
@@ -13,7 +14,7 @@ const Home = () => {
     <div>
       <HeroContent loaded={loaded} setLoaded={setLoaded} />
       {loaded && <Concept />}
-      {loaded && <Expectation json={expectData} />}
+      {loaded && <Expectation json={getLanguage(expectData)} />}
       {loaded && <Featured />}
       {loaded && <Testimonial />}
     </div>

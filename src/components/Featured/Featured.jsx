@@ -1,9 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
 import useIsVisible from "../../hooks/useIsVisible";
 import FeatureItem from "./FeaturedItem";
-import { MysteryListData as data } from "../../data/MysteryListData";
+import { MysteryListData } from "@/data/MysteryListData";
+import { getLanguage, useLanguage } from "@/LanguageContext";
 
 const Featured = () => {
+  const data = getLanguage(MysteryListData);
+  const language = useLanguage();
   const [animate, setAnimate] = useState(true);
   const refFeature = useRef();
   const isVisible1 = useIsVisible(refFeature);
@@ -28,11 +31,12 @@ const Featured = () => {
             className={`text-white lg:text-5xl text-2xl font-bold font-Montserrat leading-2
              ${isVisible1 && animate ? "sm:animate-txtBlur" : {}}`}
           >
-            Featured Mysteries
+            {language === "en" && "Featured Mysteries"}
+            {language === "de" && "Ausgewählte Mysterien"}
           </h1>
         </div>
         <div className="flex flex-col justify-center">
-          {data.map(
+          {data.mysteries.map(
             (item, index) =>
               item.feature && (
                 <FeatureItem

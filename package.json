@@ -21,6 +21,7 @@
     "dayjs": "^1.11.10",
     "embla-carousel-autoplay": "^8.0.0-rc22",
     "embla-carousel-react": "^8.0.0-rc22",
+    "flag-icons": "^7.2.0",
     "hamburger-react": "^2.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

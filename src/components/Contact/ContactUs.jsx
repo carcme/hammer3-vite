@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
-import { useForm, useWatch } from "react-hook-form";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 
-const ContactUs = () => {
+const ContactUs = ({ text }) => {
   const [mapLoaded, setMapLoaded] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [Message, setMessage] = useState("");
@@ -67,10 +67,11 @@ const ContactUs = () => {
         </div>
         <div className="lg:w-1/3 md:w-1/2 bg-[#1b1b1b] flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
           <h2 className="mb-1 text-lg font-medium text-neutral-300 title-font">
-            Contact Us
+            {text.contactUsTitle}
           </h2>
           <p className="mb-5 leading-relaxed text-neutral-600">
-            Use the contact form or telephone the number below
+            {text.contactUsSub}
+            below
           </p>
           <form onSubmit={handleSubmit(onSubmit)}>
             {/* web3Forms data */}
@@ -103,7 +104,7 @@ const ContactUs = () => {
                 className="absolute top-0 z-[1] p-2 text-neutral-400 transition-all duration-200 ease-linear origin-left"
                 htmlFor="name"
               >
-                Full Name
+                {text.fullname}
               </label>
             </div>
             <div className="relative mt-6 mb-10 border-b-2 border-transparent focus-within:border-red-700">
@@ -123,7 +124,7 @@ const ContactUs = () => {
                 className="absolute top-0 z-[1] p-2 text-neutral-400 transition-all duration-200 ease-linear origin-left"
                 htmlFor="email"
               >
-                Email
+                {text.email}
               </label>
             </div>
             <div className="relative my-6 border-b-2 border-transparent focus-within:border-red-700">
@@ -144,7 +145,7 @@ const ContactUs = () => {
                 htmlFor="comments"
                 className="absolute top-0 z-[1] p-2 text-neutral-400 transition-all duration-200 ease-linear origin-left"
               >
-                Any questions can we help with?
+                {text.comments}
               </label>
             </div>
             {isValid && (
@@ -177,7 +178,7 @@ const ContactUs = () => {
                         ></path>
                       </svg>
                     ) : (
-                      "Send Enquiry"
+                      `${text.send}`
                     )}
                   </span>
                 </button>

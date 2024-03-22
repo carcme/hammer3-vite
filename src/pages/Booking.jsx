@@ -4,8 +4,11 @@ import { getAssetURL } from "../lib/image-util";
 import { FaGamepad, FaEuroSign } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
 import MysteryItem from "@/components/MysteryItem";
-import { MysteryListData as data } from "../data/MysteryListData";
 import BookingForm from "@/components/Forms/BookingForm";
+
+import bookingPageText from "@/data/bookingPageText";
+import { MysteryListData } from "@/data/MysteryListData";
+import { getLanguage } from "@/LanguageContext";
 
 const Booking = ({}) => {
   const location = useLocation();
@@ -15,8 +18,14 @@ const Booking = ({}) => {
     console.log("Error - No mystery data, redirect to select page ");
     return <Navigate to={"/mystery"} />;
   }
+
+  const data = getLanguage(MysteryListData);
+  const bookingText = getLanguage(bookingPageText);
+
   const { id, title, plot, image, srcset, players, difficulty, cost, slug } =
     location.state;
+
+  console.log("id === " + id);
   const heroImage = getAssetURL(image);
 
   useEffect(() => {
@@ -58,7 +67,7 @@ const Booking = ({}) => {
                       {difficulty}
                     </h4>
                     <p className="mt-2 text-base font-bold leading-6 text-white">
-                      Difficulty
+                      {bookingText.difficulty}
                     </p>
                   </div>
                 </div>
@@ -75,7 +84,7 @@ const Booking = ({}) => {
                       {players}
                     </h4>
                     <p className="mt-2 text-base font-bold leading-6 text-white">
-                      Players.
+                      {bookingText.players}
                     </p>
                   </div>
                 </div>
@@ -92,7 +101,7 @@ const Booking = ({}) => {
                       {cost}
                     </h4>
                     <p className="mt-2 text-base font-bold leading-6 text-white">
-                      Price per Person
+                      {bookingText.costPerson}
                     </p>
                   </div>
                 </div>
@@ -109,32 +118,26 @@ const Booking = ({}) => {
           </div>
           <div className="section-divider-white"></div>
           <div className="pt-40 pb-20 text-2xl font-bold text-center sm:text-4xl font-Montserrat">
-            <p>BOOK YOUR MYSTERY NIGHT NOW!</p>
+            <p>{bookingText.bookNow}</p>
           </div>
           <div className="">
             <BookingForm
-              id={id}
               title={title}
-              plot={plot}
-              image={image}
-              srcset={srcset}
               players={players}
-              difficulty={difficulty}
               cost={cost}
-              slug={slug}
-              compact={true}
+              bookingText={bookingText}
             />
           </div>
         </div>
 
         <div className="text-2xl font-bold text-center sm:p-40 sm:text-4xl font-Montserrat">
-          <p className="p-0">Other Mysteries</p>
+          <p className="p-0">{bookingText.otherMysteries}</p>
           <div className="flex flex-col flex-wrap md:flex-row">
-            {data.map(
-              (item, index) =>
+            {data.mysteries.map(
+              (item) =>
                 item.id != id && (
                   <MysteryItem
-                    key={index}
+                    key={item.id}
                     id={item.id}
                     title={item.title}
                     plot={item.plot}

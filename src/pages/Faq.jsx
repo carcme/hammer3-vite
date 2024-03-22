@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Accordion from "@/components/ui/Accordion";
-import data from "@/data/faqData";
-
 import { getAssetURL } from "../lib/image-util";
 import ContactUs from "@/components/Contact/ContactUs";
 import Testimonial from "@/components/Testimonial/Testimonial";
 
+import faqData from "@/data/faqData";
+import contactUsText from "@/data/contactPageText";
+import { getLanguage, useLanguage } from "@/LanguageContext";
+
 const Faq = () => {
+  const language = useLanguage();
+  const text = getLanguage(faqData);
+
   const heroImage = getAssetURL("bg_forest_lodge.webp");
-  const [accordions, setAccordion] = useState(data);
+  const [accordions, setAccordion] = useState(text.faqs);
 
   const toggleAccordion = (accordionkey) => {
     const updatedAccordions = accordions.map((accord) => {
@@ -23,7 +28,8 @@ const Faq = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    setAccordion(text.faqs);
+  }, [language]);
 
   return (
     <>
@@ -43,7 +49,7 @@ const Faq = () => {
           <div className="flex items-center justify-center h-full">
             <div className="px-6 text-center text-white font-Montserrat md:px-12">
               <h1 className="mb-6 text-6xl relative font-bold before:content-[''] before:block before:absolute before:left-36 before:bottom-1 before:w-4 before:h-4 before:rounded-full before:bg-red-700 animate-bgBlur">
-                faqs
+                {text.title}
               </h1>
             </div>
           </div>
@@ -53,7 +59,7 @@ const Faq = () => {
       <section className="bg-[#171717] py-10">
         <div className="max-w-4xl mx-auto text-center ">
           <h2 className="mx-auto mb-10 text-2xl font-bold sm:text-4xl text-neutral-200 font-Montserrat">
-            Common Questions Answered
+            {text.subTitle}
           </h2>
           {accordions.map((accordion) => (
             <Accordion
@@ -67,8 +73,7 @@ const Faq = () => {
         </div>
       </section>
 
-      <ContactUs />
-
+      <ContactUs text={getLanguage(contactUsText)} />
       <Testimonial />
     </>
   );

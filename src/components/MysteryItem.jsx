@@ -3,6 +3,7 @@ import { getAssetURL } from "../lib/image-util";
 import { FaGamepad, FaEuroSign } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/LanguageContext";
 
 const MysteryItem = ({
   id,
@@ -18,7 +19,7 @@ const MysteryItem = ({
   compact,
 }) => {
   const imageFile = getAssetURL(image);
-
+  const language = useLanguage();
   return (
     <div
       className={`p-4 overflow-hidden w-full ${
@@ -54,9 +55,9 @@ const MysteryItem = ({
           <div className="absolute top-0 block w-1/2 transform -skew-x-12 -inset-full z-5 bg-gradient-to-r from-transparent to-white " />
           <div
             className={`absolute top-0 sm:left-0 shadow-2xl sm:m-4 p-1 m-2 text-sm font-light text-center text-white rounded-md sm:text-base sm:font-bold sm:min-w-20 before:ease overflow-hidden border transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700  group-hover:before:-translate-x-40 ${
-              difficulty == "Easy"
+              difficulty === "Easy" || difficulty === "Einfach"
                 ? "bg-green-700 group-hover:bg-green-800 group-hover:shadow-green-800 border-green-500"
-                : difficulty == "Taxing"
+                : difficulty === "Taxing" || difficulty === "Anspruchsvoll"
                 ? "bg-orange-400 group-hover:bg-orange-500 group-hover:shadow-orange-500 border-yellow-400"
                 : "bg-red-700 group-hover:bg-red-700  group-hover:shadow-red-700 border-red-400"
             }`}
@@ -86,7 +87,7 @@ const MysteryItem = ({
                 <span className="px-3">
                   <FaEuroSign size={16} color="#C2C2C2" />
                 </span>
-                <span className="text-neutral-200">{cost} per Person</span>
+                <span className="text-neutral-200">{cost} / Person</span>
               </li>
             </ul>
           </div>

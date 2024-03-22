@@ -2,9 +2,9 @@ import React, { useEffect, useState, useRef } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import dayjs from "dayjs";
 
-const BookingDetails = ({ numPlayers, gameTitle, cost, date }) => {
+const BookingDetails = ({ numPlayers, gameTitle, cost, date, bookingText }) => {
   const confirmRef = useRef(null);
-  const isTest = true;
+
   const {
     register,
     setValue,
@@ -112,7 +112,7 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date }) => {
               className="absolute top-0 z-[1] p-2 text-red-600 transition-all duration-200 ease-linear origin-left"
               htmlFor="name"
             >
-              Full name
+              {bookingText.fullName}
             </label>
           </div>
           <div className="relative mb-10 border-b-2 border-transparent sm:mb-6">
@@ -134,7 +134,7 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date }) => {
               className="absolute top-0 z-[1] p-2 text-red-600 transition-all duration-200 ease-linear origin-left"
               htmlFor="players"
             >
-              Number of Players
+              {bookingText.numPlayers}
             </label>
           </div>
           <div className="relative mb-10 border-b-2 border-transparent sm:mb-6 focus-within:border-red-700">
@@ -152,7 +152,7 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date }) => {
               className="absolute top-0 z-[1] p-2 text-red-600 transition-all duration-200 ease-linear origin-left"
               htmlFor="date"
             >
-              Selected Date
+              {bookingText.selDate}
             </label>
           </div>
         </div>
@@ -171,7 +171,7 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date }) => {
               className="absolute top-0 z-[1] p-2 text-red-600 transition-all duration-200 ease-linear origin-left"
               htmlFor="email"
             >
-              Email
+              {bookingText.email}
             </label>
           </div>
           <div className="relative mb-10 border-b-2 border-transparent sm:mb-6 focus-within:border-red-700">
@@ -192,7 +192,7 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date }) => {
               className="absolute top-0 z-[1] p-2 text-red-600 transition-all duration-200 ease-linear origin-left"
               htmlFor="tel"
             >
-              Telephone
+              {bookingText.phone}
             </label>
           </div>
         </div>
@@ -210,7 +210,7 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date }) => {
             htmlFor="comments"
             className="absolute top-0 z-[1] p-2 text-neutral-400 transition-all duration-200 ease-linear origin-left"
           >
-            Additional Comments / Requirements
+            {bookingText.comments}
           </label>
         </div>
 
@@ -218,46 +218,58 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date }) => {
           {isValid && (
             <div className="animate-txtBlur">
               <h1 className="text-5xl font-bold font-Montserrat">
-                Order Preview
+                {bookingText.preivew}
               </h1>
 
               {/* Selected Game */}
               <div className="grid grid-cols-3 py-6 gap-y-2 ">
-                <div className="flex items-center p-4 ">Selected Game:</div>
+                <div className="flex items-center p-4 ">
+                  {bookingText.selGame}
+                </div>
                 <div className="flex flex-col items-center col-span-2 p-4 text-white sm:flex-row">
                   {gameTitle}{" "}
-                  <span className="ml-3 text-neutral-600">(on {date})</span>
+                  <span className="ml-3 text-neutral-600">({date})</span>
                 </div>
 
                 {/* Date */}
-                <div className="flex items-center p-4 ">Preferred Date</div>
+                <div className="flex items-center p-4 ">
+                  {bookingText.prefDate}
+                </div>
                 <div className="flex flex-col items-center col-span-2 p-4 sm:flex-row ">
                   {date}
                 </div>
 
                 {/* Players*/}
-                <div className="flex items-center p-4 ">Number of Players</div>
+                <div className="flex items-center p-4 ">
+                  {bookingText.numPlayers}
+                </div>
                 <div className="flex flex-col items-center col-span-2 p-4 sm:flex-row ">
-                  {watchPlayers} Players
+                  {watchPlayers} {bookingText.players}
                   <span className="ml-3 text-neutral-600">
-                    ({cost} € per player)
+                    ({cost} € {bookingText.perPlayer})
                   </span>
                 </div>
 
                 {/* Deposit */}
-                <div className="flex items-center p-4 ">Minimum Deposit</div>
+                <div className="flex items-center p-4 ">
+                  {bookingText.minDeposit}
+                </div>
                 <div className="flex flex-col items-center col-span-2 p-4 sm:flex-row ">
                   {cost * watchPlayers * 0.2} €
-                  <span className="ml-3 text-neutral-600">(20% deposit)</span>
+                  <span className="ml-3 text-neutral-600">
+                    (20% {bookingText.deposit})
+                  </span>
                 </div>
 
                 {/* Balance */}
                 <div className="flex items-center p-4 ">
-                  Balance paid on the day
+                  {bookingText.balance}
                 </div>
                 <div className="flex flex-col items-center col-span-2 p-4 sm:flex-row ">
                   {cost * watchPlayers - cost * watchPlayers * 0.2} €
-                  <span className="ml-3 text-neutral-600">(inc taxes)</span>
+                  <span className="ml-3 text-neutral-600">
+                    ({bookingText.incTaxes})
+                  </span>
                 </div>
               </div>
             </div>
@@ -293,7 +305,7 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date }) => {
                       ></path>
                     </svg>
                   ) : (
-                    "Send Booking"
+                    `${bookingText.sendBtn}`
                   )}
                 </span>
               </button>

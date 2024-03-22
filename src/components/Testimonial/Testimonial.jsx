@@ -9,8 +9,9 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import data from "../../data/TestimonialData";
+import data from "@/data/TestimonialData";
 import TestimonialItem from "./TestimonialItem";
+import { getLanguage } from "@/LanguageContext";
 
 /**
  * https://ui.shadcn.com/docs/components/carousel
@@ -23,6 +24,8 @@ const Testimonial = () => {
   const [animate, setAnimate] = useState(true);
   const refTestimonial = useRef();
   const isVisible1 = useIsVisible(refTestimonial);
+
+  const text = getLanguage(data);
 
   useEffect(() => {
     let timeoutId;
@@ -45,7 +48,8 @@ const Testimonial = () => {
               className={`text-white lg:text-5xl text-2xl font-bold font-Montserrat leading-2 pb-10
             ${isVisible1 && animate ? "sm:animate-txtBlur" : {}}`}
             >
-              What Others Have Said
+              {text.sectionHeading}
+              {/* What Others Have Said */}
             </h1>
             <div className="flex justify-center ">
               <Carousel
@@ -61,7 +65,7 @@ const Testimonial = () => {
                 className="w-full max-w-5xl"
               >
                 <CarouselContent className="w-full -ml-1">
-                  {data.map((item, index) => (
+                  {text.testimonials.map((item, index) => (
                     <CarouselItem
                       key={index}
                       className="md:basis-1/2 lg:basis-1/3"

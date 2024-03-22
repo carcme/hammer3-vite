@@ -1,5 +1,6 @@
 export default function Accordion(props) {
   const { text } = props;
+
   return (
     <div>
       <div className="relative flex items-center justify-between p-3 ">

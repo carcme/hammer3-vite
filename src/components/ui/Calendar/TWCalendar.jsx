@@ -1,20 +1,30 @@
 import dayjs from "dayjs";
+
+import * as localizedFormat from "dayjs/plugin/localizedFormat";
+
 import React, { useState, useEffect } from "react";
 import { generateDate, months } from "@/lib/calendar";
 import cn from "@/lib/cn";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
+import { getLanguage, useLanguage } from "@/LanguageContext";
 
-const TWCalendar = ({ gcEvents, selectDate, setSelectDate }) => {
-  const days = ["S", "M", "T", "W", "T", "F", "S"];
+const TWCalendar = ({ gcEvents, selectDate, setSelectDate, bookingText }) => {
+  const language = useLanguage();
+  const days =
+    language == "en"
+      ? ["S", "M", "T", "W", "T", "F", "S"]
+      : ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
+
   const currentDate = dayjs(new Date());
   const [today, setToday] = useState(currentDate);
-  //   const [selectDate, setSelectDate] = useState(currentDate);
+
+  const monthsLocal = getLanguage(months);
 
   return (
     <div className="flex flex-col items-center justify-center mx-auto lg:gap-40 md:gap-20 sm:gap-5 md:divide-x md:w-full md:flex-row">
       <div className="sm:w-96 w-80 md:w-w-2/3 h-fit">
         <h1 className="pb-4 font-semibold text-center select-none">
-          {months[today.month()]} {today.year()}
+          {monthsLocal[today.month()]} {today.year()}
         </h1>
         <div className="">
           <div className="flex items-center gap-20 justify-evenly">
@@ -30,7 +40,7 @@ const TWCalendar = ({ gcEvents, selectDate, setSelectDate }) => {
                 setToday(currentDate);
               }}
             >
-              Today
+              {bookingText.today}
             </h1>
             <GrFormNext
               className="w-10 h-10 p-2 transition-all bg-red-700 rounded-full cursor-pointer hover:scale-110 hover:bg-red-800"
@@ -76,7 +86,7 @@ const TWCalendar = ({ gcEvents, selectDate, setSelectDate }) => {
                       "h-10 w-10 rounded-full grid place-content-center hover:bg-red-700 hover:text-white transition-all cursor-pointer duration-300 select-none"
                     )}
                     onClick={() => {
-                      setSelectDate(date);
+                      setSelectDate(date.locale(language));
                     }}
                   >
                     {date.date()}
@@ -89,7 +99,7 @@ const TWCalendar = ({ gcEvents, selectDate, setSelectDate }) => {
       </div>
       <div className="flex flex-col justify-between h-28 md:w-1/3 w-80 md:h-96 md:px-5 ">
         <div className="flex items-center justify-between w-full md:items-start md:flex-col">
-          <h1 className="font-normal">Your selected date </h1>
+          <h1 className="font-normal">{bookingText.selDate} </h1>
           <h1
             className={`p-3 my-4 text-white rounded-lg font-semi bold w-fit animate-txtBlur ${
               selectDate.toDate().toDateString() ===
@@ -100,14 +110,12 @@ const TWCalendar = ({ gcEvents, selectDate, setSelectDate }) => {
           >
             {selectDate.toDate().toDateString() ===
             currentDate.toDate().toDateString()
-              ? "No Selection"
+              ? `${bookingText.noSelection}`
               : selectDate.toDate().toDateString()}
           </h1>
         </div>
         <div>
-          <p className="text-sm italic">
-            * this is an evening event and starts at 6pm{" "}
-          </p>
+          <p className="text-sm italic">{bookingText.startTimeNotice}</p>
         </div>
       </div>
     </div>

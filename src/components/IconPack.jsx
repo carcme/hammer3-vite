@@ -1,6 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
-import useIsVisible from "../hooks/useIsVisible";
-import data from "../data/ExpectationData";
+import React from "react";
 import IconPackItem from "./IconPackItem";
 
 const IconPack = ({ json }) => {

@@ -44,7 +44,7 @@ const router = createBrowserRouter([
         element: <Faq />,
       },
       {
-        path: "/private-policy",
+        path: "/privacy-policy",
         element: <PrivacyPolicy />,
       },
       {

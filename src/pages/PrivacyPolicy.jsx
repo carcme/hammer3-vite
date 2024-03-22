@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Accordion from "@/components/ui/Accordion";
 
-import data from "@/data/PrivacyPolicyData";
-import { getAssetURL } from "../lib/image-util";
+import ppData from "@/data/PrivacyPolicyData";
+import { getAssetURL } from "@/lib/image-util";
+import { getLanguage, useLanguage } from "@/LanguageContext";
 
 const PrivacyPolicy = () => {
+  const language = useLanguage();
+  const data = getLanguage(ppData);
+
   const heroImage = getAssetURL("clown-gun-zoom.webp");
   const [policies, setPolicies] = useState(data.policy);
 
@@ -21,7 +25,8 @@ const PrivacyPolicy = () => {
   };
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    setPolicies(data.policy);
+  }, [language]);
 
   return (
     <>
@@ -39,7 +44,13 @@ const PrivacyPolicy = () => {
         >
           <div className="flex items-center justify-center h-full">
             <div className="px-6 text-center text-white font-Montserrat md:px-12">
-              <h1 className="mb-6 sm:text-6xl text-3xl relative font-bold before:content-[''] before:block before:absolute sm:before:left-[435px] before:left-[220px] before:bottom-1 sm:before:w-4 sm:before:h-4 before:w-2 before:h-2 before:rounded-full before:bg-red-700 animate-bgBlur">
+              <h1
+                className={`mb-6 sm:text-6xl text-3xl relative font-bold before:content-[''] before:block before:absolute before:bottom-1 sm:before:w-4 sm:before:h-4 before:w-2 before:h-2 before:rounded-full before:bg-red-700 animate-bgBlur ${
+                  language === "en"
+                    ? "sm:before:left-[435px] before:left-[220px]"
+                    : "sm:before:left-[405px] before:left-[205px]"
+                }`}
+              >
                 {data.sectionTitle}
               </h1>
             </div>

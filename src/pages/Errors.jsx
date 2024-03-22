@@ -1,6 +1,8 @@
+import { useLanguage } from "@/LanguageContext";
 import React from "react";
 
 const Errors = () => {
+  const language = useLanguage();
   return (
     <div>
       <div
@@ -12,7 +14,7 @@ const Errors = () => {
             Error: 404
           </h1>
           <p className="m-8 text-5xl font-extrabold text-center text-red-900">
-            Page Not Found!
+            {language === "en" ? "Page Not Found!" : "Seite nicht gefunden!"}
           </p>
         </div>
       </div>

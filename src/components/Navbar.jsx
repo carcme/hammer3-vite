@@ -3,10 +3,14 @@ import { Link, NavLink } from "react-router-dom";
 import { Spin as Hamburger } from "hamburger-react";
 import { FaRegCalendarAlt, FaEnvelope } from "react-icons/fa";
 import Logo from "../assets/hammer3_logo.svg";
-import data from "@/data/NavlinkData";
+import NavlinkData from "@/data/NavlinkData";
 import useScrollPosition from "@/hooks/useScrollPosition";
+import { getLanguage, useLanguage, useLanguageChange } from "@/LanguageContext";
 
 const Navbar = () => {
+  const language = useLanguage();
+  const data = getLanguage(NavlinkData);
+  const changeLanguage = useLanguageChange();
   const [isOpen, setOpen] = useState(false);
 
   const scrollPosition = useScrollPosition();
@@ -46,6 +50,14 @@ const Navbar = () => {
         id="big-nav-buttons"
         className="flex justify-end flex-grow px-4 mb-4 text-white"
       >
+        <button
+          className="hidden px-4 mt-4 transition duration-300 rounded-full md:flex hover:cursor-pointer"
+          aria-label="language"
+          onClick={changeLanguage}
+        >
+          {language === "de" && <span className="fi fi-gb fib"></span>}
+          {language === "en" && <span className="fi fi-de fib"></span>}
+        </button>
         <div className="items-end mt-4 space-x-4">
           <Link to="/mystery">
             <button
@@ -91,6 +103,14 @@ const Navbar = () => {
             </li>
           </NavLink>
         ))}
+        <button
+          className="z-50 p-4 duration-300 cursor-pointer "
+          aria-label="language"
+          onClick={changeLanguage}
+        >
+          {language === "de" && <span className="fi fi-gb fib"></span>}
+          {language === "en" && <span className="fi fi-de fib"></span>}
+        </button>
       </ul>
     </div>
   );

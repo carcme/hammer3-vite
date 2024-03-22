@@ -4,7 +4,11 @@ import { getAssetURL } from "../lib/image-util";
 import heroBlur from "../assets/heroBlur.jpg";
 import hero from "../assets/bg2.webp";
 
+import { heroSection } from "@/data/homePageText";
+import { getLanguage } from "@/LanguageContext";
+
 const HeroContent = ({ loaded, setLoaded }) => {
+  const text = getLanguage(heroSection);
   const heroImage = getAssetURL("bg2.webp");
 
   useEffect(() => {
@@ -45,18 +49,18 @@ const HeroContent = ({ loaded, setLoaded }) => {
         >
           <div className="px-20 py-40 text-white lg:p-64 ">
             <h1 className="z-10 text-6xl font-bold lg:text-8xl font-Montserrat animate-txtBlur">
-              Eat
+              {text.eat}
             </h1>
             <h1 className="z-10 text-6xl font-bold lg:text-8xl font-Montserrat animate-txtBlur">
-              Drink
+              {text.drink}
             </h1>
             <h1 className="z-10 text-6xl font-bold lg:text-8xl font-Montserrat animate-txtBlur">
-              Murder
+              {text.murder}
             </h1>
             <div className="z-40 w-fit">
               <Link to="/mystery">
                 <p className="hero-decor-before pt-4 hover:text-[#f60b0e] md:before:w-[80px] sm:before:w-0 md:before:mr-6 tracking-[3px] font-normal lg:font-bold font-Montserrat cursor-pointer animate-txtBlur">
-                  View the Mysteries
+                  {text.viewMysteries}
                 </p>
               </Link>
             </div>

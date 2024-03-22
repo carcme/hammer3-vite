@@ -4,8 +4,10 @@ import MailchimpSubscribe from "react-mailchimp-subscribe";
 import { TiTick } from "react-icons/ti";
 import { BiMailSend } from "react-icons/bi";
 import { MdErrorOutline } from "react-icons/md";
+import { useLanguage } from "@/LanguageContext";
+import subscribeWidgetText from "@/data/subscribeWidgetText";
 
-const ProcessForm = ({ status, message, onValidated, source }) => {
+const ProcessForm = ({ status, message, onValidated, source, text }) => {
   const [email, setEmail] = useState("");
   const [state, setState] = useState();
   // start, sending, success, error
@@ -58,7 +60,7 @@ const ProcessForm = ({ status, message, onValidated, source }) => {
             <input
               className="block w-full p-3 pl-10 text-sm text-white placeholder-[#717171] bg-transparent border border-gray-600 rounded-lg shadow-none sm:rounded-none sm:rounded-l-lg focus:ring-0 focus:border-gray-400 focus:outline-none webkitAutoFillOverride focus:text-white active:text-white"
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
+              placeholder={text.emailPlaceholder}
               autoComplete="email"
               type="email"
               id="email"
@@ -70,7 +72,7 @@ const ProcessForm = ({ status, message, onValidated, source }) => {
               type="submit"
               className="relative w-full px-5 py-3 overflow-hidden text-sm font-medium text-center text-white transition-all bg-red-700 border border-gray-500 rounded-lg shadow-2xl cursor-pointer sm:rounded-none sm:rounded-r-xl hover:before:bg-white before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-white before:transition-all before:duration-300 hover:text-red-700 hover:before:left-0 hover:before:w-full"
             >
-              <span className="relative z-10">Subscribe</span>
+              <span className="relative z-10">{text.subscribeBtnTxt}</span>
             </button>
           </div>
         </div>
@@ -84,9 +86,7 @@ const ProcessForm = ({ status, message, onValidated, source }) => {
           }}`}
         >
           <TiTick size={24} className="text-red-700 " />
-          <p className="mr-2 italic text-neutral-200">
-            Subscribed to the Newsletter{" "}
-          </p>
+          <p className="mr-2 italic text-neutral-200">{text.success}</p>
         </div>
       )}
       {state == "error" && (
@@ -113,9 +113,7 @@ const ProcessForm = ({ status, message, onValidated, source }) => {
         <div className="items-center max-w-screen-sm py-3 mx-0 mb-3 space-y-4 sm:flex sm:space-y-0 animate-txtBlur">
           <BiMailSend size={24} className="mr-2 text-red-700 animate-pulse" />
 
-          <p className=" text-neutral-200 animate-pulse">
-            Sending your subscription
-          </p>
+          <p className=" text-neutral-200 animate-pulse">{text.sending}</p>
         </div>
       )}
     </form>
@@ -127,6 +125,10 @@ const SubscribeWidget = ({ source }) => {
     import.meta.env.VITE_MC_U
   }&id=${import.meta.env.VITE_MC_ID}`;
 
+  const language = useLanguage();
+  const text =
+    language === "en" ? subscribeWidgetText.en : subscribeWidgetText.de;
+
   return (
     <div>
       <MailchimpSubscribe
@@ -137,16 +139,17 @@ const SubscribeWidget = ({ source }) => {
             message={message}
             onValidated={(formData) => subscribe(formData)}
             source={source}
+            text={text}
           />
         )}
       />
 
       <div className="mx-0 max-w-screen-sm text-[12px] text-left newsletter-form-footer text-[#717171]">
-        <p>We care about the protection of your data. </p>
+        <p>{text.weCare}</p>
         <p className="group">
-          <Link to={"/private-policy"} className="font-medium hover:underline">
-            Read our{" "}
-            <span className="group-hover:text-white">Privacy Policy</span>
+          <Link to={"/privacy-policy"} className="font-medium hover:underline">
+            {text.readOur}{" "}
+            <span className="group-hover:text-white">{text.privacyPolicy}</span>
           </Link>
           .
         </p>
