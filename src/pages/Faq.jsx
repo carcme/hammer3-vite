@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Accordion from "@/components/ui/Accordion";
-import { getAssetURL } from "../lib/image-util";
+import { getAssetURL } from "@/lib/image-util";
 import ContactUs from "@/components/Contact/ContactUs";
 import Testimonial from "@/components/Testimonial/Testimonial";
 

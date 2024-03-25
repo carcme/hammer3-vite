@@ -1,7 +1,6 @@
 import React from "react";
 
 const HostsSimple = ({ json }) => {
-  console.log(json);
   return (
     <div>
       <div className=" min-h-screen items-center justify-center bg-[#1b1b1b] section-divider py-40">

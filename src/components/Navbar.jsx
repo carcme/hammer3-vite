@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Spin as Hamburger } from "hamburger-react";
 import { FaRegCalendarAlt, FaEnvelope } from "react-icons/fa";
@@ -8,12 +8,28 @@ import useScrollPosition from "@/hooks/useScrollPosition";
 import { getLanguage, useLanguage, useLanguageChange } from "@/LanguageContext";
 
 const Navbar = () => {
+  const menuRef = useRef();
+
   const language = useLanguage();
   const data = getLanguage(NavlinkData);
   const changeLanguage = useLanguageChange();
   const [isOpen, setOpen] = useState(false);
 
   const scrollPosition = useScrollPosition();
+
+  useEffect(() => {
+    let handler = (e) => {
+      if (isOpen && !menuRef.current.contains(e.target)) {
+        setOpen(false);
+        console.log("closing menu");
+      }
+    };
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
 
   return (
     <div
@@ -48,17 +64,20 @@ const Navbar = () => {
       </ul>
       <div
         id="big-nav-buttons"
-        className="flex justify-end flex-grow px-4 mb-4 text-white"
+        className="flex justify-end flex-grow pr-4 space-x-4 text-white md:pr-12"
       >
         <button
-          className="hidden px-4 mt-4 transition duration-300 rounded-full md:flex hover:cursor-pointer"
+          className="hidden transition duration-300 md:flex hover:cursor-pointer"
           aria-label="language"
           onClick={changeLanguage}
         >
-          {language === "de" && <span className="fi fi-gb fib"></span>}
-          {language === "en" && <span className="fi fi-de fib"></span>}
+          <span
+            className={`py-[14px] fi fib ${
+              language === "de" ? "fi-gb" : "fi-de"
+            }`}
+          ></span>
         </button>
-        <div className="items-end mt-4 space-x-4">
+        <div className="items-end space-x-4">
           <Link to="/mystery">
             <button
               className="bg-transparent hover:bg-[#404040] border-[#404040] border-2 p-3 rounded-full transition duration-300 hover:cursor-pointer"
@@ -78,7 +97,10 @@ const Navbar = () => {
         </div>
       </div>
       {/* Mobile Navigation Icon */}
-      <div className="block transition duration-700 ease-in-out md:hidden">
+      <div
+        ref={menuRef}
+        className="block transition duration-700 ease-in-out md:hidden"
+      >
         <Hamburger toggled={isOpen} toggle={setOpen} color="#aaa" size={20} />
       </div>
       {/* Mobile Navigation Menu */}

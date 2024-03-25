@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { getAssetURL } from "../lib/image-util";
+import { getAssetURL } from "@/lib/image-util";
 import { FaGamepad, FaEuroSign } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
 import MysteryItem from "@/components/MysteryItem";
@@ -13,7 +13,6 @@ import { getLanguage } from "@/LanguageContext";
 const Booking = ({}) => {
   const location = useLocation();
 
-  console.log("location.state === " + location?.state);
   if (location === null || location.state === null) {
     console.log("Error - No mystery data, redirect to select page ");
     return <Navigate to={"/mystery"} />;

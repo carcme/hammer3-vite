@@ -4,7 +4,7 @@ import HowToPlay from "@/components/IconPack";
 import HostsSimple from "@/components/Hosts/HostsSimple";
 import Testimonial from "@/components/Testimonial/Testimonial";
 
-import howToPlayData from "../data/howToPlayData";
+import howToPlayData from "@/data/howToPlayData";
 import { hostsData } from "@/data/hostsData";
 import { getLanguage } from "@/LanguageContext";
 

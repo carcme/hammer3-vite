@@ -15,7 +15,6 @@ const ProcessForm = ({ status, message, onValidated, source, text }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("email: " + email);
     email &&
       email.indexOf("@") > -1 &&
       onValidated({
@@ -24,9 +23,6 @@ const ProcessForm = ({ status, message, onValidated, source, text }) => {
   };
 
   useEffect(() => {
-    console.log("status: " + status);
-    console.log("state: " + state);
-    console.log("msg: " + message);
     if (status === "success") clearFields();
     else {
       setState(status);
